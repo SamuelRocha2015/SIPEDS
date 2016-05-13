@@ -178,7 +178,8 @@ public class Registro0010 extends Registro {
 	public void setDifFcont(String difFcont) {
 		this.difFcont = difFcont;
 	}
-	
+
+	@Override
 	public void preencheCamposDefault() {
 		//preenche a identificacao do registro 
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0010);

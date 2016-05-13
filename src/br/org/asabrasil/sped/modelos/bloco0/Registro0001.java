@@ -14,6 +14,7 @@ public class Registro0001 extends Registro {
 		this.indicMovimento = indicMovimento;
 	}
 
+	@Override
 	public void preencheCamposDefault() {
 		
 		//preenche a identificacao do registro

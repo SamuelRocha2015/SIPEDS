@@ -144,7 +144,7 @@ public class Registro0000 extends Registro {
 	}
 	
 
-	
+	@Override
 	public void preencheCamposDefault(){
 		
 		//preenche a identificacao do registro 
