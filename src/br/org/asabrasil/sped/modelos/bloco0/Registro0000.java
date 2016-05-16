@@ -7,116 +7,95 @@ import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
 /**
- * Classe basica que contem as informacoes do bloco de abertura do arquivo (Business Object)
+ * Classe basica que contem as informacoes do bloco de abertura do arquivo
+ * (Business Object)
+ * 
  * @author samuel.rocha
- *
+ * 
  */
 public class Registro0000 extends Registro {
 
-	//NOME_ESC
+	// NOME_ESC
 	private String identTipoSped;
-	//COD_VER
+	// COD_VER
 	private String codVersaoLayout;
-	//CNPJ
+	// CNPJ
 	private String cnpj;
-	//NOME
+	// NOME
 	private String nomeEmpresa;
-	//IND_SIT_INI_PER
+	// IND_SIT_INI_PER
 	private String indicInicioPeriodo;
-	//SIT_ESPECIAL
+	// SIT_ESPECIAL
 	private String indicSituacaoEspecEventos;
-	//DT_INI
+	// DT_INI
 	private Calendar dtInicio;
-	//DT_FIN
+	// DT_FIN
 	private Calendar dtFim;
-	//RETIFICADORA
+	// RETIFICADORA
 	private String retificadora;
-	//TIP_ECF
+	// TIP_ECF
 	private String indicTipoECF;
-	//PAT_REMAN_CIS
+	// PAT_REMAN_CIS
 	private String patrimonioRemanCasoDeCisao;
-	//DT_SIT_ESP
+	// DT_SIT_ESP
 	private Calendar dtSitEspecialEvento;
-	//NUM_REC
+	// NUM_REC
 	private String numReciboECF;
-		
-	//NUM_REC
+	// NUM_REC
 	private String identSCP;
-	
-	
-	/**
-	 * esse campo nao e obrigatorio por isso foi criado apenas o get que retorna vazio
-	 * @return
-	 */
-	public String getIdentSCP() {
-		if (!Util.isStringVazia(identSCP)) {
-			return identSCP;
-		}
-		return "";
-	}
-
-	/**
-	 * esse campo nao e obrigatorio por isso foi criado apenas o get que retorna vazio
-	 * @return
-	 */
-	public String getPatrimonioRemanCasoDeCisao() {
-		
-		if (!Util.isStringVazia(patrimonioRemanCasoDeCisao)) {
-			return patrimonioRemanCasoDeCisao;
-		}
-		return "";
-	}
-	
-	public Calendar getDtSitEspecialEvento() {
-		return dtSitEspecialEvento;
-	}
-	
-	/**
-	 * esse campo nao e obrigatorio por isso foi criado apenas o get que retorna vazio
-	 * @return
-	 */
-	public String getNumReciboECF() {
-		if (!Util.isStringVazia(numReciboECF)) {
-			return numReciboECF;
-		}
-		return "";
-	}
 
 	public String getIdentTipoSped() {
-		return identTipoSped;
+		return Util.validaAtributoString(identTipoSped);
 	}
-	public void setIdentTipoSped(String identificacaoTipoSped) {
-		this.identTipoSped = identificacaoTipoSped;
-	}
+
 	public String getCodVersaoLayout() {
-		return codVersaoLayout;
+		return Util.validaAtributoString(codVersaoLayout);
 	}
-	public void setCodVersaoLayout(String codVersaoLayout) {
-		this.codVersaoLayout = codVersaoLayout;
-	}
+
 	public String getCnpj() {
-		return cnpj;
+		return Util.validaAtributoString(cnpj);
 	}
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
+
 	public String getNomeEmpresa() {
-		return nomeEmpresa;
+		return Util.validaAtributoString(nomeEmpresa);
 	}
-	public void setNomeEmpresa(String nomeEmpresa) {
-		this.nomeEmpresa = nomeEmpresa;
-	}
+
 	public String getIndicInicioPeriodo() {
-		return indicInicioPeriodo;
+		return Util.validaAtributoString(indicInicioPeriodo);
 	}
-	public void setIndicInicioPeriodo(String indicInicioPeriodo) {
-		this.indicInicioPeriodo = indicInicioPeriodo;
-	}
+
 	public String getIndicSituacaoEspecEventos() {
-		return indicSituacaoEspecEventos;
+		return Util.validaAtributoString(indicSituacaoEspecEventos);
 	}
-	public void setIndicSituacaoEspecEventos(String indicSituacaoEspecEventos) {
-		this.indicSituacaoEspecEventos = indicSituacaoEspecEventos;
+
+	public String getRetificadora() {
+		return Util.validaAtributoString(retificadora);
+	}
+
+	public String getIndicTipoECF() {
+		return Util.validaAtributoString(indicTipoECF);
+	}
+
+	public String getPatrimonioRemanCasoDeCisao() {
+		return Util.validaAtributoString(patrimonioRemanCasoDeCisao);
+	}
+
+	public String getNumReciboECF() {
+		return Util.validaAtributoString(numReciboECF);
+	}
+
+	public String getIdentSCP() {
+		return Util.validaAtributoString(identSCP);
+	}
+
+	public void setPatrimonioRemanCasoDeCisao(String patrimonioRemanCasoDeCisao) {
+		this.patrimonioRemanCasoDeCisao = patrimonioRemanCasoDeCisao;
+	}
+	public void setNumReciboECF(String numReciboECF) {
+		this.numReciboECF = numReciboECF;
+	}
+	public void setIdentSCP(String identSCP) {
+		this.identSCP = identSCP;
 	}
 	public Calendar getDtInicio() {
 		return dtInicio;
@@ -130,28 +109,21 @@ public class Registro0000 extends Registro {
 	public void setDtFim(Calendar dtFim) {
 		this.dtFim = dtFim;
 	}
-	public String getRetificadora() {
-		return retificadora;
+	public Calendar getDtSitEspecialEvento() {
+		return dtSitEspecialEvento;
 	}
-	public void setRetificadora(String retificadora) {
-		this.retificadora = retificadora;
+	public void setDtSitEspecialEvento(Calendar dtSitEspecialEvento) {
+		this.dtSitEspecialEvento = dtSitEspecialEvento;
 	}
-	public String getIndicTipoECF() {
-		return indicTipoECF;
-	}
-	public void setIndicTipoECF(String indicTipoECF) {
-		this.indicTipoECF = indicTipoECF;
-	}
-	
 
 	@Override
-	public void preencheCamposDefault(){
-		
-		//preenche a identificacao do registro 
+	public void preencheCamposDefault() {
+
+		// preenche a identificacao do registro
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0000);
-		
-		//preenche os demais campos padrão
-		this.codVersaoLayout  = ConstantesSistema.COD_VER;
+
+		// preenche os demais campos padrão
+		this.codVersaoLayout = ConstantesSistema.COD_VER;
 		this.identTipoSped = ConstantesSistema.NOME_ESC;
 		this.cnpj = ConstantesSistema.CNPJ_EMPRESA;
 		this.nomeEmpresa = ConstantesSistema.NOME_EMPRESA;
@@ -161,5 +133,5 @@ public class Registro0000 extends Registro {
 		this.indicTipoECF = ConstantesSistema.TIP_ECF;
 	}
 	
-	
+
 }

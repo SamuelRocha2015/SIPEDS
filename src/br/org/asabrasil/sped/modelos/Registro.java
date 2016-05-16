@@ -9,7 +9,7 @@ public abstract class Registro implements LinhaArquivo {
 		return identRegistro;
 	}
 
-	public void setIdentRegistro(String identRegistro) {
+	protected void setIdentRegistro(String identRegistro) {
 		this.identRegistro = identRegistro;
 	}
 	

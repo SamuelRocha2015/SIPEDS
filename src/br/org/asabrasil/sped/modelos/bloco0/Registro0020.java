@@ -1,11 +1,13 @@
 package br.org.asabrasil.sped.modelos.bloco0;
 
 import br.org.asabrasil.sped.modelos.Registro;
+import br.org.asabrasil.sped.util.ConstantesSistema;
+import br.org.asabrasil.sped.util.Util;
 
 public class Registro0020 extends Registro {
 
 	// IND_ALIQ_CSLL
-	private String PJSujeitaAliquotaCSLL;
+	private String pjSujeitaAliquotaCSLL;
 	// IND_QTE_SCP
 	private String qtdDeSCP;
 	// IND_ADM_FUN_CLU
@@ -16,8 +18,7 @@ public class Registro0020 extends Registro {
 	private String opExterior;
 	// IND_OP_VINC
 	private String opPessoaVinculada;
-	// IND_PJ_ENQUAD (PJ Enquadrada nos artigos 48 ou 49 da IN RFB no
-	// 1.312/2012)
+	// IND_PJ_ENQUAD (PJ Enquadrada nos artigos 48 ou 49 da IN RFB no 1.312/2012)
 	private String pjEnquadradaArtigos;
 	// IND_PART_EXT
 	private String partExterior;
@@ -66,254 +67,170 @@ public class Registro0020 extends Registro {
 	// IND_AREA_COM
 	private String areasLivreCom;
 
-	public String getPJSujeitaAliquotaCSLL() {
-		return PJSujeitaAliquotaCSLL;
-	}
-
-	public void setPJSujeitaAliquotaCSLL(String pJSujeitaAliquotaCSLL) {
-		PJSujeitaAliquotaCSLL = pJSujeitaAliquotaCSLL;
+	public String getPjSujeitaAliquotaCSLL() {
+		return Util.validaAtributoString(pjSujeitaAliquotaCSLL);
 	}
 
 	public String getQtdDeSCP() {
-		return qtdDeSCP;
-	}
-
-	public void setQtdDeSCP(String qtdDeSCP) {
-		this.qtdDeSCP = qtdDeSCP;
+		return Util.validaAtributoString(qtdDeSCP);
 	}
 
 	public String getAdmFundosClubesInvest() {
-		return admFundosClubesInvest;
-	}
-
-	public void setAdmFundosClubesInvest(String admFundosClubesInvest) {
-		this.admFundosClubesInvest = admFundosClubesInvest;
+		return Util.validaAtributoString(admFundosClubesInvest);
 	}
 
 	public String getPartConsorciosEmpresas() {
-		return partConsorciosEmpresas;
-	}
-
-	public void setPartConsorciosEmpresas(String partConsorciosEmpresas) {
-		this.partConsorciosEmpresas = partConsorciosEmpresas;
+		return Util.validaAtributoString(partConsorciosEmpresas);
 	}
 
 	public String getOpExterior() {
-		return opExterior;
-	}
-
-	public void setOpExterior(String opExterior) {
-		this.opExterior = opExterior;
+		return Util.validaAtributoString(opExterior);
 	}
 
 	public String getOpPessoaVinculada() {
-		return opPessoaVinculada;
-	}
-
-	public void setOpPessoaVinculada(String opPessoaVinculada) {
-		this.opPessoaVinculada = opPessoaVinculada;
+		return Util.validaAtributoString(opPessoaVinculada);
 	}
 
 	public String getPjEnquadradaArtigos() {
-		return pjEnquadradaArtigos;
+		return Util.validaAtributoString(pjEnquadradaArtigos);
 	}
 
+	public String getPartExterior() {
+		return Util.validaAtributoString(partExterior);
+	}
+
+	public String getAtividadeRural() {
+		return Util.validaAtributoString(atividadeRural);
+	}
+
+	public String getExistLucroExploracao() {
+		return Util.validaAtributoString(existLucroExploracao);
+	}
+
+	public String getIsencaoReduImpParaLucroPresumido() {
+		return Util.validaAtributoString(isencaoReduImpParaLucroPresumido);
+	}
+
+	public String getIndicExistenciaFinorFinam() {
+		return Util.validaAtributoString(indicExistenciaFinorFinam);
+	}
+
+	public String getDoacoesCampanhasEleitorais() {
+		return Util.validaAtributoString(doacoesCampanhasEleitorais);
+	}
+
+	public String getPartAvaliacaoMetodoEquiPatri() {
+		return Util.validaAtributoString(partAvaliacaoMetodoEquiPatri);
+	}
+
+	public String getPjEfetuouVendasEmpresaComercial() {
+		return Util.validaAtributoString(pjEfetuouVendasEmpresaComercial);
+	}
+
+	public String getRecExteriorOuNaoResidentes() {
+		return Util.validaAtributoString(recExteriorOuNaoResidentes);
+	}
+
+	public String getAtivosExterior() {
+		return Util.validaAtributoString(ativosExterior);
+	}
+
+	public String getPjComercialExpodtadora() {
+		return Util.validaAtributoString(pjComercialExpodtadora);
+	}
+
+	public String getPagExteriorOuNaoResidentes() {
+		return Util.validaAtributoString(pagExteriorOuNaoResidentes);
+	}
+
+	public String getComercEletroETi() {
+		return Util.validaAtributoString(comercEletroETi);
+	}
+
+	public String getRoyaltiesRecBrasilEExterior() {
+		return Util.validaAtributoString(royaltiesRecBrasilEExterior);
+	}
+
+	public String getRoyaltiesPagBenBrasilEExterior() {
+		return Util.validaAtributoString(royaltiesPagBenBrasilEExterior);
+	}
+
+	public String getRendRelatServJuros() {
+		return Util.validaAtributoString(rendRelatServJuros);
+	}
+
+	public String getPagRemessasTituloServ() {
+		return Util.validaAtributoString(pagRemessasTituloServ);
+	}
+
+	public String getInovTecEDesenvTec() {
+		return Util.validaAtributoString(inovTecEDesenvTec);
+	}
+
+	public String getCapInfoInclDig() {
+		return Util.validaAtributoString(capInfoInclDig);
+	}
+
+	public String getPjHabilitadaResp() {
+		return Util.validaAtributoString(pjHabilitadaResp);
+	}
+
+	public String getPoloIndManaus() {
+		return Util.validaAtributoString(poloIndManaus);
+	}
+
+	public String getZonasDeProcessamentoExp() {
+		return Util.validaAtributoString(zonasDeProcessamentoExp);
+	}
+
+	public String getAreasLivreCom() {
+		return Util.validaAtributoString(areasLivreCom);
+	}
+
+	public void setPjSujeitaAliquotaCSLL(String pjSujeitaAliquotaCSLL) {
+		this.pjSujeitaAliquotaCSLL = pjSujeitaAliquotaCSLL;
+	}
 	public void setPjEnquadradaArtigos(String pjEnquadradaArtigos) {
 		this.pjEnquadradaArtigos = pjEnquadradaArtigos;
 	}
 
-	public String getPartExterior() {
-		return partExterior;
-	}
-
-	public void setPartExterior(String partExterior) {
-		this.partExterior = partExterior;
-	}
-
-	public String getAtividadeRural() {
-		return atividadeRural;
-	}
-
-	public void setAtividadeRural(String atividadeRural) {
-		this.atividadeRural = atividadeRural;
-	}
-
-	public String getExistLucroExploracao() {
-		return existLucroExploracao;
-	}
-
-	public void setExistLucroExploracao(String existLucroExploracao) {
-		this.existLucroExploracao = existLucroExploracao;
-	}
-
-	public String getIsencaoReduImpParaLucroPresumido() {
-		return isencaoReduImpParaLucroPresumido;
-	}
-
-	public void setIsencaoReduImpParaLucroPresumido(
-			String isencaoReduImpParaLucroPresumido) {
-		this.isencaoReduImpParaLucroPresumido = isencaoReduImpParaLucroPresumido;
-	}
-
-	public String getIndicExistenciaFinorFinam() {
-		return indicExistenciaFinorFinam;
-	}
-
-	public void setIndicExistenciaFinorFinam(String indicExistenciaFinorFinam) {
-		this.indicExistenciaFinorFinam = indicExistenciaFinorFinam;
-	}
-
-	public String getDoacoesCampanhasEleitorais() {
-		return doacoesCampanhasEleitorais;
-	}
-
-	public void setDoacoesCampanhasEleitorais(String doacoesCampanhasEleitorais) {
-		this.doacoesCampanhasEleitorais = doacoesCampanhasEleitorais;
-	}
-
-	public String getPartAvaliacaoMetodoEquiPatri() {
-		return partAvaliacaoMetodoEquiPatri;
-	}
-
-	public void setPartAvaliacaoMetodoEquiPatri(
-			String partAvaliacaoMetodoEquiPatri) {
-		this.partAvaliacaoMetodoEquiPatri = partAvaliacaoMetodoEquiPatri;
-	}
-
-	public String getPjEfetuouVendasEmpresaComercial() {
-		return pjEfetuouVendasEmpresaComercial;
-	}
-
-	public void setPjEfetuouVendasEmpresaComercial(
-			String pjEfetuouVendasEmpresaComercial) {
-		this.pjEfetuouVendasEmpresaComercial = pjEfetuouVendasEmpresaComercial;
-	}
-
-	public String getRecExteriorOuNaoResidentes() {
-		return recExteriorOuNaoResidentes;
-	}
-
-	public void setRecExteriorOuNaoResidentes(String recExteriorOuNaoResidentes) {
-		this.recExteriorOuNaoResidentes = recExteriorOuNaoResidentes;
-	}
-
-	public String getAtivosExterior() {
-		return ativosExterior;
-	}
-
-	public void setAtivosExterior(String ativosExterior) {
-		this.ativosExterior = ativosExterior;
-	}
-
-	public String getPjComercialExpodtadora() {
-		return pjComercialExpodtadora;
-	}
-
-	public void setPjComercialExpodtadora(String pjComercialExpodtadora) {
-		this.pjComercialExpodtadora = pjComercialExpodtadora;
-	}
-
-	public String getPagExteriorOuNaoResidentes() {
-		return pagExteriorOuNaoResidentes;
-	}
-
-	public void setPagExteriorOuNaoResidentes(String pagExteriorOuNaoResidentes) {
-		this.pagExteriorOuNaoResidentes = pagExteriorOuNaoResidentes;
-	}
-
-	public String getComercEletroETi() {
-		return comercEletroETi;
-	}
-
-	public void setComercEletroETi(String comercEletroETi) {
-		this.comercEletroETi = comercEletroETi;
-	}
-
-	public String getRoyaltiesRecBrasilEExterior() {
-		return royaltiesRecBrasilEExterior;
-	}
-
-	public void setRoyaltiesRecBrasilEExterior(
-			String royaltiesRecBrasilEExterior) {
-		this.royaltiesRecBrasilEExterior = royaltiesRecBrasilEExterior;
-	}
-
-	public String getRoyaltiesPagBenBrasilEExterior() {
-		return royaltiesPagBenBrasilEExterior;
-	}
-
-	public void setRoyaltiesPagBenBrasilEExterior(
-			String royaltiesPagBenBrasilEExterior) {
-		this.royaltiesPagBenBrasilEExterior = royaltiesPagBenBrasilEExterior;
-	}
-
-	public String getRendRelatServJuros() {
-		return rendRelatServJuros;
-	}
-
-	public void setRendRelatServJuros(String rendRelatServJuros) {
-		this.rendRelatServJuros = rendRelatServJuros;
-	}
-
-	public String getPagRemessasTituloServ() {
-		return pagRemessasTituloServ;
-	}
-
-	public void setPagRemessasTituloServ(String pagRemessasTituloServ) {
-		this.pagRemessasTituloServ = pagRemessasTituloServ;
-	}
-
-	public String getInovTecEDesenvTec() {
-		return inovTecEDesenvTec;
-	}
-
-	public void setInovTecEDesenvTec(String inovTecEDesenvTec) {
-		this.inovTecEDesenvTec = inovTecEDesenvTec;
-	}
-
-	public String getCapInfoInclDig() {
-		return capInfoInclDig;
-	}
-
-	public void setCapInfoInclDig(String capInfoInclDig) {
-		this.capInfoInclDig = capInfoInclDig;
-	}
-
-	public String getPjHabilitadaResp() {
-		return pjHabilitadaResp;
-	}
-
-	public void setPjHabilitadaResp(String pjHabilitadaResp) {
-		this.pjHabilitadaResp = pjHabilitadaResp;
-	}
-
-	public String getPoloIndManaus() {
-		return poloIndManaus;
-	}
-
-	public void setPoloIndManaus(String poloIndManaus) {
-		this.poloIndManaus = poloIndManaus;
-	}
-
-	public String getZonasDeProcessamentoExp() {
-		return zonasDeProcessamentoExp;
-	}
-
-	public void setZonasDeProcessamentoExp(String zonasDeProcessamentoExp) {
-		this.zonasDeProcessamentoExp = zonasDeProcessamentoExp;
-	}
-
-	public String getAreasLivreCom() {
-		return areasLivreCom;
-	}
-
-	public void setAreasLivreCom(String areasLivreCom) {
-		this.areasLivreCom = areasLivreCom;
-	}
-
 	@Override
 	public void preencheCamposDefault() {
-
+		
+		//preenche a identificacao do registro
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0020);
+		
+		
+		// preenche os demais campos padrão
+		this.qtdDeSCP = ConstantesSistema.IND_QTE_SCP;
+		this.admFundosClubesInvest = ConstantesSistema.IND_ADM_FUN_CLU;
+		this.partConsorciosEmpresas = ConstantesSistema.IND_PART_CONS;
+		this.opExterior = ConstantesSistema.IND_OP_EXT;
+		this.opPessoaVinculada = ConstantesSistema.IND_OP_VINC;
+		this.partExterior = ConstantesSistema.IND_PART_EXT;
+		this.atividadeRural = ConstantesSistema.IND_ATIV_RURAL;
+		this.existLucroExploracao = ConstantesSistema.IND_LUC_EXP;
+		this.isencaoReduImpParaLucroPresumido = ConstantesSistema.IND_RED_ISEN;
+		this.indicExistenciaFinorFinam = ConstantesSistema.IND_FIN;
+		this.doacoesCampanhasEleitorais = ConstantesSistema.IND_DOA_ELEIT;
+		this.partAvaliacaoMetodoEquiPatri = ConstantesSistema.IND_PART_COLIG;
+		this.pjEfetuouVendasEmpresaComercial = ConstantesSistema.IND_VEND_EXP;
+		this.recExteriorOuNaoResidentes = ConstantesSistema.IND_REC_EXT;
+		this.ativosExterior = ConstantesSistema.IND_ATIV_EXT;
+		this.pjComercialExpodtadora = ConstantesSistema.IND_COM_EXP;
+		this.pagExteriorOuNaoResidentes = ConstantesSistema.IND_PGTO_EXT;
+		this.comercEletroETi = ConstantesSistema.IND_E_COM_TI;
+		this.royaltiesRecBrasilEExterior= ConstantesSistema.IND_ROY_REC;
+		this.royaltiesPagBenBrasilEExterior = ConstantesSistema.IND_ROY_PAG;
+		this.rendRelatServJuros = ConstantesSistema.IND_REND_SERV;
+		this.pagRemessasTituloServ = ConstantesSistema.IND_PGTO_REM;
+		this.inovTecEDesenvTec = ConstantesSistema.IND_INOV_TEC;
+		this.capInfoInclDig = ConstantesSistema.IND_CAP_INF;
+		this.pjHabilitadaResp = ConstantesSistema.IND_PJ_HAB;
+		this.poloIndManaus = ConstantesSistema.IND_POLO_AM;
+		this.zonasDeProcessamentoExp = ConstantesSistema.IND_ZON_EXP;
+		this.areasLivreCom = ConstantesSistema.IND_AREA_COM;
+		
 	}
 
 }
