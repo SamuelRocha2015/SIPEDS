@@ -1,13 +1,25 @@
-package br.org.asabrasil.sped.modelos.bloco0;
+package br.org.asabrasil.sped.modelos.blocoE;
 
 import br.org.asabrasil.sped.modelos.RegistroFechaBloco;
 import br.org.asabrasil.sped.util.ConstantesSistema;
+import br.org.asabrasil.sped.util.Util;
 
-public class Registro0990 extends RegistroFechaBloco {
+public class RegistroE990 extends RegistroFechaBloco {
 
-		
+	private String qtdLinhas;
 
-	public Registro0990() {
+	public String getQtdLinhas() {
+		return Util.validaAtributoString(qtdLinhas);
+	}
+
+	
+	public void setQtdLinhas(String qtdLinhas) {
+		this.qtdLinhas = qtdLinhas;
+	}
+	
+	
+	
+	public RegistroE990() {
 		super();
 		preencheCamposDefault();
 	}
@@ -16,9 +28,9 @@ public class Registro0990 extends RegistroFechaBloco {
 	@Override
 	public void preencheCamposDefault() {
 		// preenche a identificacao do registro
-		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0990);
-
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_E990);
 	}
+
 
 	@Override
 	public void geraLayout(StringBuilder conteudo) {
@@ -31,7 +43,7 @@ public class Registro0990 extends RegistroFechaBloco {
 		
 		// gera o trecho que indica fim do registro		
 		conteudo.append(this.geraFinalRegistro());
-
 	}
+
 
 }

@@ -1,12 +1,8 @@
 package br.org.asabrasil.sped.util;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.LineNumberReader;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public final class Util {
 
@@ -21,21 +17,22 @@ public final class Util {
 		}
 		return novaData;
 	}
-
-	public static Calendar converteStringParaCalendar(String stringSata) {
-		Calendar data = null;
-
-		try {
-			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(stringSata);
-			data = Calendar.getInstance();
-			data.setTime(date);
-
-		} catch (ParseException ex) {
-			ex.printStackTrace();
-		}
-
-		return data;
-	}
+//	
+//	TODO: Remover esse metodo no futuro
+//	public static Calendar converteStringParaCalendar(String stringSata) {
+//		Calendar data = null;
+//
+//		try {
+//			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(stringSata);
+//			data = Calendar.getInstance();
+//			data.setTime(date);
+//
+//		} catch (ParseException ex) {
+//			ex.printStackTrace();
+//		}
+//
+//		return data;
+//	}
 
 	public static String removeCaracteresEspeciais(String string) {
 		String novaString = "";
@@ -56,18 +53,14 @@ public final class Util {
 		return ConstantesSistema.CARACTERE_VAZIO;
 	}
 
-	public static String contarQtdLinhasArquivo(File arquivoLeitura) {
-		int qtdLinha = 0;
-
-		try {
-			LineNumberReader linhaLeitura = new LineNumberReader(new FileReader(arquivoLeitura));
-			linhaLeitura.skip(arquivoLeitura.length());
-			qtdLinha = linhaLeitura.getLineNumber();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return String.valueOf(qtdLinha);
+	public static Calendar recuperaDataAtualizacao() {
+		Calendar cal = Calendar.getInstance();
+		
+		GregorianCalendar  calG = new GregorianCalendar ();
+		System.out.println(calG.getActualMinimum(Calendar.DAY_OF_MONTH));
+//		cal.setTimeInMillis(new Long());
+		
+		return cal;
 	}
 
 }

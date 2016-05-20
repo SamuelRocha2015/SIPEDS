@@ -1,10 +1,12 @@
 package br.org.asabrasil.sped.modelos.bloco0;
 
-import br.org.asabrasil.sped.modelos.Registro;
+import java.util.List;
+
+import br.org.asabrasil.sped.modelos.Linha;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
-public class Registro0010 extends Registro {
+public class Registro0010 extends Linha {
 
 	// HASH_ ECF _ANTERIOR (opcional)
 	private String hashECF;
@@ -34,6 +36,12 @@ public class Registro0010 extends Registro {
 	private String optanteExtincaoRTT;
 	// DIF_FCONT
 	private String difFcont;
+
+	
+	public Registro0010() {
+		super();
+		preencheCamposDefault();
+	}
 
 	public String getHashECF() {
 		return Util.validaAtributoString(hashECF);
@@ -140,8 +148,68 @@ public class Registro0010 extends Registro {
 		// preenche os demais campos padrão
 		this.indicOptanteRefis = ConstantesSistema.OPT_REFIS;
 		this.indicOptantePaes = ConstantesSistema.OPT_PAES;
+		this.formTributacao  = ConstantesSistema.FORMA_TRIB;
+		this.tpPJImuneIsenta = ConstantesSistema.TIP_ENT;
 		this.optanteExtincaoRTT = ConstantesSistema.OPT_EXT_RTT;
 		this.difFcont = ConstantesSistema.DIF_FCONT;
+		
+	}
+
+	public void gerarRegistro(List<StringBuilder> listaRegistros) {
+
+		StringBuilder registro0010 = new StringBuilder();
+		
+		registro0010.append(this.getIdentRegistro());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getHashECF());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getIndicOptanteRefis());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getIndicOptantePaes());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getFormTributacao());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getIndicPeriodoApuracaoIRPJ());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getQualificacaoPJ());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getFormaTribPeriodo());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getFormaApuracaoEstimMensal());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getEscrituracao());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getTpPJImuneIsenta());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getApuracaoIRJParaImunesIsentas());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getApuracaoCSLL());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getOptanteExtincaoRTT());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0010.append(this.getDifFcont());
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+	
+		
+		registro0010.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(registro0010);
+
+
 	}
 
 }

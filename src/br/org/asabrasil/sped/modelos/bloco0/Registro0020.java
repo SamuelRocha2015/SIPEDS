@@ -1,10 +1,12 @@
 package br.org.asabrasil.sped.modelos.bloco0;
 
-import br.org.asabrasil.sped.modelos.Registro;
+import java.util.List;
+
+import br.org.asabrasil.sped.modelos.Linha;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
-public class Registro0020 extends Registro {
+public class Registro0020 extends Linha {
 
 	// IND_ALIQ_CSLL
 	private String pjSujeitaAliquotaCSLL;
@@ -18,7 +20,8 @@ public class Registro0020 extends Registro {
 	private String opExterior;
 	// IND_OP_VINC
 	private String opPessoaVinculada;
-	// IND_PJ_ENQUAD (PJ Enquadrada nos artigos 48 ou 49 da IN RFB no 1.312/2012)
+	// IND_PJ_ENQUAD (PJ Enquadrada nos artigos 48 ou 49 da IN RFB no
+	// 1.312/2012)
 	private String pjEnquadradaArtigos;
 	// IND_PART_EXT
 	private String partExterior;
@@ -66,6 +69,11 @@ public class Registro0020 extends Registro {
 	private String zonasDeProcessamentoExp;
 	// IND_AREA_COM
 	private String areasLivreCom;
+
+	public Registro0020() {
+		super();
+		preencheCamposDefault();
+	}
 
 	public String getPjSujeitaAliquotaCSLL() {
 		return Util.validaAtributoString(pjSujeitaAliquotaCSLL);
@@ -190,18 +198,19 @@ public class Registro0020 extends Registro {
 	public void setPjSujeitaAliquotaCSLL(String pjSujeitaAliquotaCSLL) {
 		this.pjSujeitaAliquotaCSLL = pjSujeitaAliquotaCSLL;
 	}
+
 	public void setPjEnquadradaArtigos(String pjEnquadradaArtigos) {
 		this.pjEnquadradaArtigos = pjEnquadradaArtigos;
 	}
 
 	@Override
 	public void preencheCamposDefault() {
-		
-		//preenche a identificacao do registro
+
+		// preenche a identificacao do registro
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0020);
-		
-		
+
 		// preenche os demais campos padrão
+		this.pjSujeitaAliquotaCSLL = ConstantesSistema.IND_ALIQ_CSLL;
 		this.qtdDeSCP = ConstantesSistema.IND_QTE_SCP;
 		this.admFundosClubesInvest = ConstantesSistema.IND_ADM_FUN_CLU;
 		this.partConsorciosEmpresas = ConstantesSistema.IND_PART_CONS;
@@ -220,7 +229,7 @@ public class Registro0020 extends Registro {
 		this.pjComercialExpodtadora = ConstantesSistema.IND_COM_EXP;
 		this.pagExteriorOuNaoResidentes = ConstantesSistema.IND_PGTO_EXT;
 		this.comercEletroETi = ConstantesSistema.IND_E_COM_TI;
-		this.royaltiesRecBrasilEExterior= ConstantesSistema.IND_ROY_REC;
+		this.royaltiesRecBrasilEExterior = ConstantesSistema.IND_ROY_REC;
 		this.royaltiesPagBenBrasilEExterior = ConstantesSistema.IND_ROY_PAG;
 		this.rendRelatServJuros = ConstantesSistema.IND_REND_SERV;
 		this.pagRemessasTituloServ = ConstantesSistema.IND_PGTO_REM;
@@ -230,7 +239,111 @@ public class Registro0020 extends Registro {
 		this.poloIndManaus = ConstantesSistema.IND_POLO_AM;
 		this.zonasDeProcessamentoExp = ConstantesSistema.IND_ZON_EXP;
 		this.areasLivreCom = ConstantesSistema.IND_AREA_COM;
+		this.pjEnquadradaArtigos = ConstantesSistema.IND_PJ_ENQUAD;
+
+	}
+
+	public void gerarRegistro(List<StringBuilder> listaRegistros) {
+		StringBuilder registro0020 = new StringBuilder();
+
+		// Cria a linha referente ao bloco
+		registro0020.append(this.getIdentRegistro());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPjSujeitaAliquotaCSLL());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getQtdDeSCP());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getAdmFundosClubesInvest());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPartConsorciosEmpresas());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getOpExterior());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getOpPessoaVinculada());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPjEnquadradaArtigos());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPartExterior());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getAtividadeRural());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getExistLucroExploracao());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getIsencaoReduImpParaLucroPresumido());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getIndicExistenciaFinorFinam());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getDoacoesCampanhasEleitorais());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPartAvaliacaoMetodoEquiPatri());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPjEfetuouVendasEmpresaComercial());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getRecExteriorOuNaoResidentes());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getAtivosExterior());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPjComercialExpodtadora());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPagExteriorOuNaoResidentes());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getComercEletroETi());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getRoyaltiesRecBrasilEExterior());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getRoyaltiesPagBenBrasilEExterior());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getRendRelatServJuros());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPagRemessasTituloServ());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getInovTecEDesenvTec());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getCapInfoInclDig());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPjHabilitadaResp());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getPoloIndManaus());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getZonasDeProcessamentoExp());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0020.append(this.getAreasLivreCom());
+		registro0020.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
 		
+		registro0020.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(registro0020);
 	}
 
 }

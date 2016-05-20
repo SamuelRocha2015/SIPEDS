@@ -1,8 +1,8 @@
 package br.org.asabrasil.sped.modelos.bloco0;
 
-import java.util.Calendar;
+import java.util.List;
 
-import br.org.asabrasil.sped.modelos.Registro;
+import br.org.asabrasil.sped.modelos.Linha;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
@@ -13,7 +13,7 @@ import br.org.asabrasil.sped.util.Util;
  * @author samuel.rocha
  * 
  */
-public class Registro0000 extends Registro {
+public class Registro0000 extends Linha {
 
 	// NOME_ESC
 	private String identTipoSped;
@@ -28,9 +28,9 @@ public class Registro0000 extends Registro {
 	// SIT_ESPECIAL
 	private String indicSituacaoEspecEventos;
 	// DT_INI
-	private Calendar dtInicio;
+	private String  dtInicio;
 	// DT_FIN
-	private Calendar dtFim;
+	private String  dtFim;
 	// RETIFICADORA
 	private String retificadora;
 	// TIP_ECF
@@ -38,11 +38,17 @@ public class Registro0000 extends Registro {
 	// PAT_REMAN_CIS
 	private String patrimonioRemanCasoDeCisao;
 	// DT_SIT_ESP
-	private Calendar dtSitEspecialEvento;
+	private String  dtSitEspecialEvento;
 	// NUM_REC
 	private String numReciboECF;
 	// NUM_REC
 	private String identSCP;
+
+	
+	public Registro0000() {
+		super();
+		preencheCamposDefault();
+	}
 
 	public String getIdentTipoSped() {
 		return Util.validaAtributoString(identTipoSped);
@@ -97,22 +103,31 @@ public class Registro0000 extends Registro {
 	public void setIdentSCP(String identSCP) {
 		this.identSCP = identSCP;
 	}
-	public Calendar getDtInicio() {
-		return dtInicio;
+	
+	
+	
+	
+	public String getDtInicio() {
+		return Util.validaAtributoString(dtInicio);
 	}
-	public void setDtInicio(Calendar dtInicio) {
+
+	public void setDtInicio(String dtInicio) {
 		this.dtInicio = dtInicio;
 	}
-	public Calendar getDtFim() {
-		return dtFim;
+
+	public String getDtFim() {
+		return Util.validaAtributoString(dtFim);
 	}
-	public void setDtFim(Calendar dtFim) {
+
+	public void setDtFim(String dtFim) {
 		this.dtFim = dtFim;
 	}
-	public Calendar getDtSitEspecialEvento() {
-		return dtSitEspecialEvento;
+
+	public String getDtSitEspecialEvento() {
+		return Util.validaAtributoString(dtSitEspecialEvento);
 	}
-	public void setDtSitEspecialEvento(Calendar dtSitEspecialEvento) {
+
+	public void setDtSitEspecialEvento(String dtSitEspecialEvento) {
 		this.dtSitEspecialEvento = dtSitEspecialEvento;
 	}
 
@@ -131,6 +146,47 @@ public class Registro0000 extends Registro {
 		this.indicSituacaoEspecEventos = ConstantesSistema.SIT_ESPECIAL;
 		this.retificadora = ConstantesSistema.RETIFICADORA;
 		this.indicTipoECF = ConstantesSistema.TIP_ECF;
+	}
+
+	
+	public void gerarRegistro(List<StringBuilder> listaRegistros) {
+		StringBuilder registro0000 = new StringBuilder();
+		
+		// Cria a linha referente ao bloco
+		registro0000.append(this.getIdentRegistro());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getIdentTipoSped());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getCodVersaoLayout());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getCnpj());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getNomeEmpresa());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getIndicInicioPeriodo());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getIndicSituacaoEspecEventos());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getPatrimonioRemanCasoDeCisao());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(Util.removeCaracteresEspeciais(this.getDtSitEspecialEvento()));
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(Util.removeCaracteresEspeciais(this.getDtInicio()));
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(Util.removeCaracteresEspeciais(this.getDtFim()));
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getRetificadora());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getNumReciboECF());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getIndicTipoECF());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registro0000.append(this.getIdentSCP());
+		
+		//gera o trecho que indica fim do registro
+		registro0000.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(registro0000);
 	}
 	
 

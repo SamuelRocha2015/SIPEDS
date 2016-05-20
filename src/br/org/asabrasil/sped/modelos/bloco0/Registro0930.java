@@ -1,10 +1,12 @@
 package br.org.asabrasil.sped.modelos.bloco0;
 
-import br.org.asabrasil.sped.modelos.Registro;
+import java.util.List;
+
+import br.org.asabrasil.sped.modelos.Linha;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
-public class Registro0930 extends Registro {
+public class Registro0930 extends Linha {
 
 	private String nomeSignatario;
 	private String cpfCnpj;
@@ -12,6 +14,12 @@ public class Registro0930 extends Registro {
 	private String emailSignatario;
 	private String foneSignatario;
 	private String numeroInscricaoContabilista;
+
+	
+	public Registro0930() {
+		super();
+		preencheCamposDefault();
+	}
 
 	public String getNumeroInscricaoContabilista() {
 		return Util.validaAtributoString(numeroInscricaoContabilista);
@@ -65,8 +73,39 @@ public class Registro0930 extends Registro {
 	@Override
 	public void preencheCamposDefault() {
 		// preenche a identificacao do registro
-		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0035);
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0930);
 
+	}
+
+
+	public void gerarRegistro(List<StringBuilder> listaRegistros) {
+		StringBuilder registro0930 = new StringBuilder();
+		
+		// Cria a linha referente ao bloco
+		registro0930.append(this.getIdentRegistro());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0930.append(this.getNomeSignatario());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0930.append(this.getCpfCnpj());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registro0930.append(this.getCodQualifAssinante());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0930.append(this.getNumeroInscricaoContabilista());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0930.append(this.getEmailSignatario());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registro0930.append(this.getFoneSignatario());
+		registro0930.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registro0930.append(this.geraFinalRegistro());
+
+		listaRegistros.add(registro0930);
 	}
 
 }
