@@ -153,6 +153,10 @@ public class Registro0000 extends Linha {
 		StringBuilder registro0000 = new StringBuilder();
 		
 		// Cria a linha referente ao bloco
+		
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		
 		registro0000.append(this.getIdentRegistro());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		registro0000.append(this.getIdentTipoSped());
@@ -182,6 +186,7 @@ public class Registro0000 extends Linha {
 		registro0000.append(this.getIndicTipoECF());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		registro0000.append(this.getIdentSCP());
+		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		
 		//gera o trecho que indica fim do registro
 		registro0000.append(this.geraFinalRegistro());

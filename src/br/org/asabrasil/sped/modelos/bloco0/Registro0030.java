@@ -103,7 +103,9 @@ public class Registro0030 extends Linha {
 
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
 		StringBuilder registro0030 = new StringBuilder();
-
+		
+		registro0030.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
 		// Cria a linha referente ao bloco
 		registro0030.append(this.getIdentRegistro());
 		registro0030.append(ConstantesSistema.CARACTERE_SEPARADOR);

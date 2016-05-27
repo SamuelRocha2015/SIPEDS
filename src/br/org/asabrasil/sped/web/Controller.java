@@ -29,10 +29,10 @@ public class Controller extends HttpServlet {
 				
 		
 		if(!Util.isStringVazia(req.getParameter("DT_INI"))){
-			registro0000.setDtInicio(req.getParameter("DT_INI"));
+			registro0000.setDtInicio("01/01/2015");
 		}
 		if(!Util.isStringVazia(req.getParameter("DT_FIN"))){
-			registro0000.setDtFim(req.getParameter("DT_FIN"));
+			registro0000.setDtFim("31/12/2015");
 		}
 		
 		new GeraLayout().montaLayout(registro0000);

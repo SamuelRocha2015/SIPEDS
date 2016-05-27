@@ -12,7 +12,6 @@ import br.org.asabrasil.sped.modelos.bloco0.Registro0001;
 import br.org.asabrasil.sped.modelos.bloco0.Registro0010;
 import br.org.asabrasil.sped.modelos.bloco0.Registro0020;
 import br.org.asabrasil.sped.modelos.bloco0.Registro0030;
-import br.org.asabrasil.sped.modelos.bloco0.Registro0930;
 import br.org.asabrasil.sped.modelos.bloco0.Registro0990;
 import br.org.asabrasil.sped.modelos.blocoC.RegistroC001;
 import br.org.asabrasil.sped.modelos.blocoC.RegistroC990;
@@ -20,13 +19,26 @@ import br.org.asabrasil.sped.modelos.blocoE.RegistroE001;
 import br.org.asabrasil.sped.modelos.blocoE.RegistroE990;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ001;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ990;
+import br.org.asabrasil.sped.modelos.blocoK.RegistroK001;
+import br.org.asabrasil.sped.modelos.blocoK.RegistroK990;
+import br.org.asabrasil.sped.modelos.blocoL.RegistroL001;
+import br.org.asabrasil.sped.modelos.blocoL.RegistroL990;
+import br.org.asabrasil.sped.modelos.blocoM.RegistroM001;
+import br.org.asabrasil.sped.modelos.blocoM.RegistroM990;
+import br.org.asabrasil.sped.modelos.blocoN.RegistroN001;
+import br.org.asabrasil.sped.modelos.blocoN.RegistroN990;
+import br.org.asabrasil.sped.modelos.blocoP.RegistroP001;
+import br.org.asabrasil.sped.modelos.blocoP.RegistroP990;
+import br.org.asabrasil.sped.modelos.blocoQ.RegistroQ001;
+import br.org.asabrasil.sped.modelos.blocoQ.RegistroQ990;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 
 public class GeraLayout {
-
+	private List<StringBuilder> listaRegistros = new ArrayList<>();
+	
 	public void montaLayout(Registro0000 registro0000) {
 
-		List<StringBuilder> listaRegistros = new ArrayList<>();
+		
 		List<StringBuilder> listaFinal = new ArrayList<>();
 
 		registro0000.gerarRegistro(listaRegistros);
@@ -35,66 +47,69 @@ public class GeraLayout {
 		new Registro0010().gerarRegistro(listaRegistros);
 		new Registro0020().gerarRegistro(listaRegistros);
 		new Registro0030().gerarRegistro(listaRegistros);
-		montaRegistro0930(listaRegistros);
+		MontaRegistro.montaRegistro0930(listaRegistros);
 
-		listaFinal.addAll(preparaArquivo(listaRegistros,  new Registro0990()));
-		listaRegistros = new ArrayList<>();
+		listaFinal.addAll(preparaArquivo(new Registro0990()));
 		
 		new RegistroC001().gerarRegistro(listaRegistros);
-		listaFinal.addAll(preparaArquivo(listaRegistros, new RegistroC990()));
-		listaRegistros = new ArrayList<>();
+		listaFinal.addAll(preparaArquivo(new RegistroC990()));
 		
-		new RegistroE001().gerarRegistro(listaRegistros);
-		listaFinal.addAll(preparaArquivo(listaRegistros, new RegistroE990()));
-		
-		listaRegistros = new ArrayList<>();
+		new 
+		RegistroE001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroE990()));
 		
 		new RegistroJ001().gerarRegistro(listaRegistros);
-		listaFinal.addAll(preparaArquivo(listaRegistros, new RegistroJ990()));
+		
+		MontaRegistro.montarRegistroJ050(listaRegistros);
+		
+		MontaRegistro.montarRegistroJ051(listaRegistros);
 
+		listaFinal.addAll(preparaArquivo(new RegistroJ990()));
+		
+		new
+		RegistroK001().gerarRegistro(listaRegistros);
+		
+		MontaRegistro.montaRegistroK030(listaRegistros);
+		MontaRegistro.montaRegistroK155(listaRegistros);
+		
+		listaFinal.addAll(preparaArquivo(new RegistroK990()));
+		
+		new 
+		RegistroL001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroL990()));
+
+		new 
+		RegistroM001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroM990()));
+		
+		new 
+		RegistroN001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroN990()));
+		
+		new 
+		RegistroP001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroP990()));
+
+		new 
+		RegistroQ001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroQ990()));
+		
 		geraArquivo(listaFinal);
 	}
 
-	private void montaRegistro0930(List<StringBuilder> listaRegistros) {
 
-		Registro0930 registro0930Contador = new Registro0930();
-		Registro0930 registro0930Presidente = new Registro0930();
-
-		// TODO: Mock apenas para teste, mudar para os valores reais, quando
-		// souber a informação
-		registro0930Contador.setNomeSignatario(ConstantesSistema.IDENT_NOME_CONTADOR);
-		registro0930Contador.setCpfCnpj(ConstantesSistema.IDENT_CPF_CNPJ_CONTADOR);
-		registro0930Contador.setCodQualifAssinante(ConstantesSistema.IDENT_QUALIF_CONTADOR);
-		// TODO: Conseguir o nome da inscricao contabilista do contador
-		// registro0930Contador.setNumeroInscricaoContabilista("1SP123456");
-		registro0930Contador.setEmailSignatario(ConstantesSistema.IDENT_EMAIL_CONTADOR);
-		registro0930Contador.setFoneSignatario(ConstantesSistema.IDENT_FONE_CONTADOR);
-
-		// TODO: Mock apenas para teste, mudar para os valores reais, quando
-		// souber a informação
-		registro0930Presidente.setNomeSignatario(ConstantesSistema.IDENT_NOME_RESPONSAVEL2);
-		registro0930Presidente.setCpfCnpj(ConstantesSistema.IDENT_CPF_CNPJ_RESPONSAVEL2);
-		registro0930Presidente.setCodQualifAssinante(ConstantesSistema.IDENT_QUALIF_RESPONSAVEL2);
-		registro0930Presidente.setEmailSignatario(ConstantesSistema.IDENT_EMAIL_RESPONSAVEL2);
-		registro0930Presidente.setFoneSignatario(ConstantesSistema.IDENT_FONE_RESPONSAVEL2);
-
-		registro0930Contador.gerarRegistro(listaRegistros);
-		registro0930Presidente.gerarRegistro(listaRegistros);
-
-	}
-
-	public List<StringBuilder> preparaArquivo(List<StringBuilder> listaRegistro, RegistroFechaBloco reg) {
+	public List<StringBuilder> preparaArquivo(RegistroFechaBloco reg) {
 
 		List<StringBuilder> listaFinal = new ArrayList<>();
-		int qtdLinhas = listaRegistro.size() + 1;
+		int qtdLinhas = listaRegistros.size() + 1;
 		StringBuilder ultimaLinhaBloco = new StringBuilder();
 
 		reg.setQtdLinhas(String.valueOf(qtdLinhas));
 		reg.geraLayout(ultimaLinhaBloco);
 
-		listaFinal = listaRegistro;
+		listaFinal = listaRegistros;
 		listaFinal.add(ultimaLinhaBloco);
-
+		listaRegistros = new ArrayList<>();
 		return listaFinal;
 	}
 
@@ -105,7 +120,6 @@ public class GeraLayout {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
 
 			// escrevendo a ultima linha do bloco
-			// writer.write(ultimaLinhaBloco.toString());
 			for (StringBuilder registro : listaRegistro) {
 				writer.write(registro.toString());
 			}

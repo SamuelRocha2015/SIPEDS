@@ -152,12 +152,17 @@ public class Registro0010 extends Linha {
 		this.tpPJImuneIsenta = ConstantesSistema.TIP_ENT;
 		this.optanteExtincaoRTT = ConstantesSistema.OPT_EXT_RTT;
 		this.difFcont = ConstantesSistema.DIF_FCONT;
+		this.escrituracao = ConstantesSistema.TIP_ESC_PRE;
+		this.apuracaoIRJParaImunesIsentas = ConstantesSistema.FORMA_APUR_I;
+		this.apuracaoCSLL = ConstantesSistema.APUR_CSLL;
 		
 	}
 
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
 
 		StringBuilder registro0010 = new StringBuilder();
+		
+		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		
 		registro0010.append(this.getIdentRegistro());
 		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
@@ -209,7 +214,5 @@ public class Registro0010 extends Linha {
 		
 		listaRegistros.add(registro0010);
 
-
 	}
-
 }

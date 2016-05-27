@@ -16,6 +16,11 @@ public class RegistroJ050 extends Linha {
 	private String codContaSinteticaSuperior;
 	private String nomeContaAnaliticaSintetica;
 
+	public RegistroJ050() {
+		super();
+		preencheCamposDefault();
+	}
+
 	public String getDtAtualizacao() {
 		return Util.validaAtributoString(dtAtualizacao);
 	}
@@ -77,14 +82,41 @@ public class RegistroJ050 extends Linha {
 	public void preencheCamposDefault() {
 		// preenche a identificacao do registro
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_J050);
-//		this.dtAtualizacao = Util.recuperaDataAtualizacao();
-
+		this.dtAtualizacao = Util.recuperaDataAtualizacao();
 	}
 
 	@Override
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
-		// TODO Auto-generated method stub
+		StringBuilder registroJ050 = new StringBuilder();
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		registroJ050.append(this.getIdentRegistro());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(Util.removeCaracteresEspeciais(this.getDtAtualizacao()));
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(this.getCodNatureza());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(this.getIndicTpConta());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		registroJ050.append(this.getNivelConta());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(this.getCodContaAnaliticaSintetica());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(this.getCodContaSinteticaSuperior());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(this.getNomeContaAnaliticaSintetica());
+		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		registroJ050.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(registroJ050);
+
 
 	}
-
 }

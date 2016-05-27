@@ -12,7 +12,6 @@ public class ConstantesSistema {
 	public static final String CAMINHO_ARQUIVO = "C:\\temp\\dados.txt";
 	
 	
-	
 	// BLOCO 0 - Registro 0000
 	public static final String REG_REGISTRO_0000 = "0000";
 	public static final String NOME_ESC = "LECF";
@@ -37,9 +36,10 @@ public class ConstantesSistema {
 	public static final String OPT_EXT_RTT = "N";
 	public static final String DIF_FCONT = "N";
 	public static final String FORMA_TRIB = "8";
-	public static final String TIP_ENT = "4";
-	
-	
+	public static final String TIP_ENT = "04";
+	public static final String TIP_ESC_PRE = "C";
+	public static final String FORMA_APUR_I = "D";
+	public static final String APUR_CSLL = "D";
 
 	// BLOCO 0 - Registro 0020
 	public static final String REG_REGISTRO_0020 = "0020";
@@ -126,15 +126,51 @@ public class ConstantesSistema {
 	
 	// BLOCO J
 	public static final String REG_REGISTRO_J001 = "J001";
-	public static final String IND_DAD_BLOCO_J = "1";
+	public static final String IND_DAD_BLOCO_J = "0";
 	public static final String REG_REGISTRO_J990 = "J990";
+	public static final String REG_REGISTRO_J050 = "J050";
+	public static final String REG_REGISTRO_J051 = "J051";
+	public static final String REG_REGISTRO_J053 = "J053";
 	
-	
+		
 	// BLOCO K
 	public static final String REG_REGISTRO_K001 = "K001";
 	public static final String IND_DAD_BLOCO_K = "0";
+	public static final String REG_REGISTRO_K030 = "K030";
+	public static final String REG_REGISTRO_K155 = "K155";
+	public static final String REG_REGISTRO_K156 = "K156";
+	public static final String REG_REGISTRO_K355 = "K355";
+	public static final String REG_REGISTRO_K356 = "K356";
 	public static final String REG_REGISTRO_K990 = "K990";
-	public static final String REG_REGISTRO_J050 = "J050";
+	public static final String PER_APUR = "A00";
 	
+	
+	
+	//BLOCO L
+	public static final String REG_REGISTRO_L001 = "L001";
+	public static final String IND_DAD_BLOCO_L = "1";
+	public static final String REG_REGISTRO_L990 = "L990";
+		
+	//BLOCO M
+	public static final String REG_REGISTRO_M001 = "M001";
+	public static final String IND_DAD_BLOCO_M = "1";
+	public static final String REG_REGISTRO_M990 = "M990";
+		
+	//BLOCO N
+	public static final String REG_REGISTRO_N001 = "N001";
+	public static final String IND_DAD_BLOCO_N = "1";
+	public static final String REG_REGISTRO_N990 = "N990";
+	
+	//BLOCO P
+	public static final String REG_REGISTRO_P001 = "P001";
+	public static final String IND_DAD_BLOCO_P = "1";
+	public static final String REG_REGISTRO_P990 = "P990";
 
+	
+	//BLOCO Q
+	public static final String REG_REGISTRO_Q001 = "Q001";
+	public static final String IND_DAD_BLOCO_Q = "1";
+	public static final String REG_REGISTRO_Q990 = "Q990";
+
+	
 }

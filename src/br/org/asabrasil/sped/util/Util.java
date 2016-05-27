@@ -2,41 +2,16 @@ package br.org.asabrasil.sped.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
 public final class Util {
 
 	private Util() {
 	}
 
-	public static String converteCalendarParaString(Calendar data) {
-		String novaData = "";
-		if (data != null) {
-			novaData = new SimpleDateFormat("dd/MM/yyyy")
-					.format(data.getTime());
-		}
-		return novaData;
-	}
-//	
-//	TODO: Remover esse metodo no futuro
-//	public static Calendar converteStringParaCalendar(String stringSata) {
-//		Calendar data = null;
-//
-//		try {
-//			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(stringSata);
-//			data = Calendar.getInstance();
-//			data.setTime(date);
-//
-//		} catch (ParseException ex) {
-//			ex.printStackTrace();
-//		}
-//
-//		return data;
-//	}
-
 	public static String removeCaracteresEspeciais(String string) {
 		String novaString = "";
-		if (string != null && !string.isEmpty()) {
+		if (!isStringVazia(string)) {
 			novaString = string.replace("/", "");
 		}
 		return novaString;
@@ -53,14 +28,14 @@ public final class Util {
 		return ConstantesSistema.CARACTERE_VAZIO;
 	}
 
-	public static Calendar recuperaDataAtualizacao() {
+	public static String recuperaDataAtualizacao() {
 		Calendar cal = Calendar.getInstance();
 		
-		GregorianCalendar  calG = new GregorianCalendar ();
-		System.out.println(calG.getActualMinimum(Calendar.DAY_OF_MONTH));
-//		cal.setTimeInMillis(new Long());
-		
-		return cal;
+		cal.set(Calendar.MONTH, Calendar.JANUARY);
+		cal.set(Calendar.DAY_OF_MONTH, 1);
+		cal.add(Calendar.YEAR, -1);
+
+		return new SimpleDateFormat("dd/MM/yyyy").format(cal.getTime());
 	}
 
 }
