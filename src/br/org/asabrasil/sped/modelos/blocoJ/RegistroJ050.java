@@ -82,7 +82,7 @@ public class RegistroJ050 extends Linha {
 	public void preencheCamposDefault() {
 		// preenche a identificacao do registro
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_J050);
-		this.dtAtualizacao = Util.recuperaDataAtualizacao();
+		this.dtAtualizacao = Util.dataInicialOuFinalApuracaoSemMascara(true);
 	}
 
 	@Override
@@ -92,7 +92,7 @@ public class RegistroJ050 extends Linha {
 		registroJ050.append(this.getIdentRegistro());
 		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		
-		registroJ050.append(Util.removeCaracteresEspeciais(this.getDtAtualizacao()));
+		registroJ050.append(this.getDtAtualizacao());
 		registroJ050.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		
 		registroJ050.append(this.getCodNatureza());

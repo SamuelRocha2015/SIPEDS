@@ -173,11 +173,11 @@ public class Registro0000 extends Linha {
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		registro0000.append(this.getPatrimonioRemanCasoDeCisao());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
-		registro0000.append(Util.removeCaracteresEspeciais(this.getDtSitEspecialEvento()));
+		registro0000.append(this.getDtSitEspecialEvento());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
-		registro0000.append(Util.removeCaracteresEspeciais(this.getDtInicio()));
+		registro0000.append(this.getDtInicio());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
-		registro0000.append(Util.removeCaracteresEspeciais(this.getDtFim()));
+		registro0000.append(this.getDtFim());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		registro0000.append(this.getRetificadora());
 		registro0000.append(ConstantesSistema.CARACTERE_SEPARADOR);

@@ -20,6 +20,7 @@ import br.org.asabrasil.sped.modelos.blocoE.RegistroE990;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ001;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ990;
 import br.org.asabrasil.sped.modelos.blocoK.RegistroK001;
+import br.org.asabrasil.sped.modelos.blocoK.RegistroK030;
 import br.org.asabrasil.sped.modelos.blocoK.RegistroK990;
 import br.org.asabrasil.sped.modelos.blocoL.RegistroL001;
 import br.org.asabrasil.sped.modelos.blocoL.RegistroL990;
@@ -37,6 +38,7 @@ public class GeraLayout {
 	private List<StringBuilder> listaRegistros = new ArrayList<>();
 	
 	public void montaLayout(Registro0000 registro0000) {
+
 
 		
 		List<StringBuilder> listaFinal = new ArrayList<>();
@@ -69,7 +71,9 @@ public class GeraLayout {
 		new
 		RegistroK001().gerarRegistro(listaRegistros);
 		
-		MontaRegistro.montaRegistroK030(listaRegistros);
+		new 
+		RegistroK030().gerarRegistro(listaRegistros);
+		
 		MontaRegistro.montaRegistroK155(listaRegistros);
 		
 		listaFinal.addAll(preparaArquivo(new RegistroK990()));

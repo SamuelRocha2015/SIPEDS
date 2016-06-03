@@ -2,7 +2,6 @@ package br.org.asabrasil.sped.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public final class Util {
 
@@ -28,14 +27,21 @@ public final class Util {
 		return ConstantesSistema.CARACTERE_VAZIO;
 	}
 
-	public static String recuperaDataAtualizacao() {
+	public static String dataInicialOuFinalApuracaoSemMascara(boolean isDataInicial) {
 		Calendar cal = Calendar.getInstance();
 		
-		cal.set(Calendar.MONTH, Calendar.JANUARY);
-		cal.set(Calendar.DAY_OF_MONTH, 1);
+		
+		if (isDataInicial) {
+			cal.set(Calendar.MONTH, Calendar.JANUARY);
+			cal.set(Calendar.DAY_OF_MONTH, 1);
+		} else {
+			cal.set(Calendar.MONTH, Calendar.DECEMBER);
+			cal.set(Calendar.DAY_OF_MONTH, 31);	
+		}
+		
+		
 		cal.add(Calendar.YEAR, -1);
 
-		return new SimpleDateFormat("dd/MM/yyyy").format(cal.getTime());
+		return removeCaracteresEspeciais(new SimpleDateFormat("dd/MM/yyyy").format(cal.getTime()));
 	}
-
 }

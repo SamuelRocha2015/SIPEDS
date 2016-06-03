@@ -28,12 +28,16 @@ public class Controller extends HttpServlet {
 		Registro0000 registro0000 = new Registro0000();
 				
 		
-		if(!Util.isStringVazia(req.getParameter("DT_INI"))){
-			registro0000.setDtInicio("01/01/2015");
-		}
-		if(!Util.isStringVazia(req.getParameter("DT_FIN"))){
-			registro0000.setDtFim("31/12/2015");
-		}
+//		if(!Util.isStringVazia(req.getParameter("DT_INI"))){
+//			registro0000.setDtInicio("01/01/2015");
+//		}
+//		if(!Util.isStringVazia(req.getParameter("DT_FIN"))){
+//			registro0000.setDtFim("31/12/2015");
+//		}
+		
+		
+		registro0000.setDtInicio(Util.dataInicialOuFinalApuracaoSemMascara(true));
+		registro0000.setDtFim(Util.dataInicialOuFinalApuracaoSemMascara(false));
 		
 		new GeraLayout().montaLayout(registro0000);
 		PrintWriter writer = resp.getWriter();

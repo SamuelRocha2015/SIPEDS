@@ -6,7 +6,7 @@ public class Teste {
 	public static void main(String[] args) {
 		
 		//Imprime a data formatada para dd/mm/aaaa
-		System.out.println (Util.recuperaDataAtualizacao());
+		System.out.println (Util.dataInicialOuFinalApuracaoSemMascara(true));
 		
 	}
 }

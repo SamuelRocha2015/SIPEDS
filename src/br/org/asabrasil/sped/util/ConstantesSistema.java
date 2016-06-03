@@ -18,7 +18,7 @@ public class ConstantesSistema {
 	public static final String COD_VER = "0002";
 
 	public static final String CNPJ_EMPRESA = "05080329000123";
-	public static final String NOME_EMPRESA = "ASA BRASIL";
+	public static final String NOME_EMPRESA = "ASSOCIACAO PROGRAMA UM MILHAO DE CISTERNAS PARA O SEMI-ARIDO";
 
 	public static final String IND_SIT_INI_PER = "0";
 	public static final String SIT_ESPECIAL = "0";
@@ -96,10 +96,11 @@ public class ConstantesSistema {
 	// BLOCO 0 - Registro 0930
 	public static final String REG_REGISTRO_0930 = "0930";
 	//dados do contador
+	
 	public static final String IDENT_NOME_CONTADOR = "ROSIVALDO JUSTINO DA SILVA";
 	public static final String IDENT_CPF_CNPJ_CONTADOR = "19431120453";
 	public static final String IDENT_QUALIF_CONTADOR = "900";
-//	public static final String IND_CRC_CONTADOR = "";
+	public static final String IND_CRC_CONTADOR = "PE008704O4";
 	public static final String IDENT_EMAIL_CONTADOR = "jap.contabilidade@gmail.com";
 	public static final String IDENT_FONE_CONTADOR = "08130280770";
 	//dados do presidente (responsavel)

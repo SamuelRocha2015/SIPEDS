@@ -160,59 +160,59 @@ public class Registro0010 extends Linha {
 
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
 
-		StringBuilder registro0010 = new StringBuilder();
+		StringBuilder reg = new StringBuilder();
 		
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		
-		registro0010.append(this.getIdentRegistro());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getIdentRegistro());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getHashECF());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getHashECF());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getIndicOptanteRefis());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getIndicOptanteRefis());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getIndicOptantePaes());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getIndicOptantePaes());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getFormTributacao());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getFormTributacao());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getIndicPeriodoApuracaoIRPJ());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getIndicPeriodoApuracaoIRPJ());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getQualificacaoPJ());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getQualificacaoPJ());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getFormaTribPeriodo());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getFormaTribPeriodo());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getFormaApuracaoEstimMensal());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getFormaApuracaoEstimMensal());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getEscrituracao());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getEscrituracao());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getTpPJImuneIsenta());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getTpPJImuneIsenta());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getApuracaoIRJParaImunesIsentas());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getApuracaoIRJParaImunesIsentas());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getApuracaoCSLL());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getApuracaoCSLL());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getOptanteExtincaoRTT());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getOptanteExtincaoRTT());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
-		registro0010.append(this.getDifFcont());
-		registro0010.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		reg.append(this.getDifFcont());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 	
 		
-		registro0010.append(this.geraFinalRegistro());
+		reg.append(this.geraFinalRegistro());
 		
-		listaRegistros.add(registro0010);
+		listaRegistros.add(reg);
 
 	}
 }
