@@ -25,7 +25,7 @@
 		
 		<form action="executa" method="POST" class="form-horizontal" role="form">
 
-			<div class="form-group">
+		<!--  	<div class="form-group">
               <label for="DT_INI">Data do Início do Período:</label> <br />
               <input type="text" class="form-control" id="DT_INI" name="DT_INI"  placeholder="00/00/0000" maxlength="10" onkeyup="insereMascaraDt(this)">
            </div>
@@ -34,9 +34,9 @@
               <label for="DT_FIN">Data do Fim do Período:</label> <br />
               <input type="text" class="form-control" id="DT_FIN" name="DT_FIN"  placeholder="00/00/0000" maxlength="10"  onkeyup="insereMascaraDt(this)" >
            </div>
-		
+		-->
 		     <input type="submit" value="Gerar" class="btn btn-primary" />
-                <input type="reset" value="Limpar" class="btn btn-danger" />
+           <!--      <input type="reset" value="Limpar" class="btn btn-danger" /> -->
 		</form>
 		
 	</div>

@@ -116,6 +116,9 @@ public class RegistroK155 extends Linha {
 		reg.append(this.getVlTotalDebitosPeriodo());
 		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		
+		reg.append(this.getVlTotalCreditosPeriodo());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
 		reg.append(this.getVlSaldoFinalPeriodo());
 		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);		
 

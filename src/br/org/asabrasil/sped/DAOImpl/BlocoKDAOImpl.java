@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.org.asabrasil.sped.DAOUtil.ConnectionFactory;
-import br.org.asabrasil.sped.DAOUtil.DAOUtil;
 import br.org.asabrasil.sped.DAOUtil.SQL;
 import br.org.asabrasil.sped.modelos.blocoK.RegistroK155;
+import br.org.asabrasil.sped.util.Util;
 
 public class BlocoKDAOImpl {
 	private static BlocoKDAOImpl uniqueInstance = new BlocoKDAOImpl();
@@ -37,7 +37,7 @@ public class BlocoKDAOImpl {
 			String sql = SQL.consultaRegistroK155().toString();
 			stmt = con.prepareStatement(sql);
 			
-			DAOUtil.substNamedParamSQL(sql, ":dtInicial", "01012015", 28, stmt);
+//			DAOUtil.substNamedParamSQL(sql, ":dtInicial", "01012015", 28, stmt);
 			
 			
 			rs = stmt.executeQuery();
@@ -46,11 +46,11 @@ public class BlocoKDAOImpl {
 				
 				RegistroK155 reg = new RegistroK155();
 				reg.setCodAnaliticaPatrimonial(rs.getString("COD_CONTA_ANALITICA"));
-				reg.setVlSaldoInicialPeriodo(rs.getBigDecimal("SALDO_ANTERIOR").toString());
+				reg.setVlSaldoInicialPeriodo(Util.moedaFormatada(rs.getBigDecimal("SALDO_ANTERIOR").abs()));
 				reg.setIndicSitSaldoInicial(rs.getString("INDICADOR_INICIAL"));
-				reg.setVlTotalDebitosPeriodo(rs.getBigDecimal("VALOR_DEBITO").toString());
-				reg.setVlTotalCreditosPeriodo(rs.getBigDecimal("VALOR_CREDITO").toString());
-				reg.setVlSaldoFinalPeriodo(rs.getBigDecimal("SALDO_FINAL").toString());
+				reg.setVlTotalDebitosPeriodo(Util.moedaFormatada(rs.getBigDecimal("VALOR_DEBITO").abs()));
+				reg.setVlTotalCreditosPeriodo(Util.moedaFormatada(rs.getBigDecimal("VALOR_CREDITO").abs()));
+				reg.setVlSaldoFinalPeriodo(Util.moedaFormatada(rs.getBigDecimal("SALDO_FINAL").abs()));
 				reg.setIndicSitSaldoFinal(rs.getString("INDICADOR_FINAL"));
 				
 				listaConsultaK155.add(reg);

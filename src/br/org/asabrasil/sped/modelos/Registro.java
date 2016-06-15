@@ -16,13 +16,9 @@ public abstract class Registro  {
 	}
 	
 	public StringBuilder geraFinalRegistro(){
-		
 		StringBuilder reg = new StringBuilder();
 		
-//		reg.append(ConstantesSistema.CARACTERE_RETORNO_DE_CARRO);
-//		reg.append(ConstantesSistema.CARACTERE_FIM_DE_LINHA);
 		reg.append(ConstantesSistema.CARACTERE_QUEBRA_LINHA);
-		
 		return reg;
 	}
 

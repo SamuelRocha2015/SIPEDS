@@ -210,7 +210,7 @@ public class Registro0020 extends Linha {
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_0020);
 
 		// preenche os demais campos padrão
-		this.pjSujeitaAliquotaCSLL = ConstantesSistema.IND_ALIQ_CSLL;
+//		this.pjSujeitaAliquotaCSLL = ConstantesSistema.IND_ALIQ_CSLL;
 		this.qtdDeSCP = ConstantesSistema.IND_QTE_SCP;
 		this.admFundosClubesInvest = ConstantesSistema.IND_ADM_FUN_CLU;
 		this.partConsorciosEmpresas = ConstantesSistema.IND_PART_CONS;

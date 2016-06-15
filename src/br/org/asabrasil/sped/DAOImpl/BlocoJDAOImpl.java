@@ -10,6 +10,8 @@ import br.org.asabrasil.sped.DAOUtil.ConnectionFactory;
 import br.org.asabrasil.sped.DAOUtil.SQL;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ050;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ051;
+import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ053;
+import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ100;
 
 public class BlocoJDAOImpl {
 	
@@ -34,8 +36,7 @@ public class BlocoJDAOImpl {
 		ResultSet rs = null;
 
 		try {
-			stmt = con.prepareStatement(SQL.consultaRegistroJ050().toString());
-
+			stmt = con.prepareStatement(SQL.consultaRegistroJ050OuJ100(false).toString());
 			rs = stmt.executeQuery();
 			
 			 while (rs.next()) {
@@ -50,7 +51,6 @@ public class BlocoJDAOImpl {
 				 
 				 listaJ050.add(reg);
 			 }
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -65,7 +65,6 @@ public class BlocoJDAOImpl {
 
 		try {
 			stmt = con.prepareStatement(SQL.consultaRegistroJ051().toString());
-			
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -77,8 +76,53 @@ public class BlocoJDAOImpl {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return listaJ051;
 	}
 
+	public List<RegistroJ053> consultaJ053() {
+		List<RegistroJ053> listaJ053 = new ArrayList<>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			stmt = con.prepareStatement(SQL.consultaRegistroJ051().toString());
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				RegistroJ053 reg = new RegistroJ053();
+				reg.setCodIdentGrupoFormado(rs.getString("CODIGO_IDENTIFICACAO"));
+				reg.setCodSubcontaCorrelata(rs.getString("CODIGO_SUBCONTA_CORRELATA"));
+				listaJ053.add(reg);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listaJ053;
+	}
+	
+	
+	
+	public List<RegistroJ100> consultaJ100() {
+		List<RegistroJ100> listaJ100 = new ArrayList<>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+			stmt = con.prepareStatement(SQL.consultaRegistroJ050OuJ100(true).toString());
+			rs = stmt.executeQuery();
+			
+			 while (rs.next()) {
+				 RegistroJ100 reg = new RegistroJ100();
+				 reg.setCodCentroCustos(rs.getString("ID"));
+				 reg.setNomeCentroCustos(rs.getString("NOME_CONTA"));
+				 
+				 listaJ100.add(reg);
+			 }
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listaJ100;
+	}
 }

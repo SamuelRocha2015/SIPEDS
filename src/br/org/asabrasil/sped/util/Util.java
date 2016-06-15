@@ -1,7 +1,11 @@
 package br.org.asabrasil.sped.util;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public final class Util {
 
@@ -43,5 +47,20 @@ public final class Util {
 		cal.add(Calendar.YEAR, -1);
 
 		return removeCaracteresEspeciais(new SimpleDateFormat("dd/MM/yyyy").format(cal.getTime()));
+	}
+	
+	
+	
+	public static String moedaFormatada(BigDecimal valor) {
+
+		DecimalFormat formatoDois = 
+				new DecimalFormat("##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
+//		new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
+		
+		formatoDois.setMinimumFractionDigits(2); 
+		formatoDois.setParseBigDecimal (true);
+		
+		return formatoDois.format(valor);
+		
 	}
 }

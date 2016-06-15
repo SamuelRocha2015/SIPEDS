@@ -10,10 +10,15 @@ public class RegistroJ053 extends Linha {
 
 	private String codIdentGrupoFormado;
 	private String codSubcontaCorrelata;
+	private String natSubconta;
 
-	public RegistroJ053() {
-		super();
-		preencheCamposDefault();
+
+	public String getNatSubconta() {
+		return Util.validaAtributoString(natSubconta);
+	}
+
+	public void setNatSubconta(String natSubconta) {
+		this.natSubconta = natSubconta;
 	}
 
 	public String getCodIdentGrupoFormado() {
@@ -32,16 +37,41 @@ public class RegistroJ053 extends Linha {
 		this.codSubcontaCorrelata = codSubcontaCorrelata;
 	}
 
+	public RegistroJ053() {
+		super();
+		preencheCamposDefault();
+	}
+
+	
 	@Override
 	public void preencheCamposDefault() {
 		// preenche a identificacao do registro
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_J053);
-
+		this.setNatSubconta(ConstantesSistema.NAT_SUB_CNT);
 	}
 
 	@Override
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
-		// TODO Auto-generated method stub
+
+		StringBuilder reg = new StringBuilder();
+		
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getIdentRegistro());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getCodIdentGrupoFormado());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getCodSubcontaCorrelata());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getNatSubconta());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.geraFinalRegistro());
+
+		listaRegistros.add(reg);
 
 	}
 

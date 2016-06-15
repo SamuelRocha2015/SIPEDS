@@ -18,3 +18,5 @@ public class RegistroJ001 extends LinhaAbreBloco {
 	}
 
 }
+
+

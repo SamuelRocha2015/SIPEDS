@@ -3,6 +3,7 @@ package br.org.asabrasil.sped.modelos.blocoJ;
 import java.util.List;
 
 import br.org.asabrasil.sped.modelos.Linha;
+import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
 public class RegistroJ100 extends Linha {
@@ -42,14 +43,29 @@ public class RegistroJ100 extends Linha {
 
 	@Override
 	public void preencheCamposDefault() {
-		// TODO Auto-generated method stub
-
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_J053);
 	}
 
 	@Override
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
-		// TODO Auto-generated method stub
 
+		StringBuilder reg = new StringBuilder();
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getIdentRegistro());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getDtAlteracao());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getCodCentroCustos());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getNomeCentroCustos());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.geraFinalRegistro());
+
+		listaRegistros.add(reg);
 	}
-
 }

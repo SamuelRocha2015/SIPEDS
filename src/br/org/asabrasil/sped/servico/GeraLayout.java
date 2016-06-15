@@ -1,4 +1,4 @@
-package br.org.asabrasil.sped.servico;
+ package br.org.asabrasil.sped.servico;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -65,6 +65,10 @@ public class GeraLayout {
 		MontaRegistro.montarRegistroJ050(listaRegistros);
 		
 		MontaRegistro.montarRegistroJ051(listaRegistros);
+		
+//		MontaRegistro.montarRegistroJ053(listaRegistros);
+//		
+//		MontaRegistro.montarRegistroJ100(listaRegistros);
 
 		listaFinal.addAll(preparaArquivo(new RegistroJ990()));
 		
