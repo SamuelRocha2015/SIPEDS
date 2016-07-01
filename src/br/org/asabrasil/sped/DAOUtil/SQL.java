@@ -439,8 +439,13 @@ public final class SQL {
 		sql.append(" WHERE                                        ");
 		sql.append(" 	CLASSIFICADOR BETWEEN '1.2.03.02'         ");
 		sql.append(" 	AND '1.2.03.03'                           ");
-		sql.append(" 	AND CLASSE = 0;                           ");
+		sql.append(" 	AND CLASSE = 0                            ");
 		
 		return sql;
+	}
+
+	public static Object consultaRegistroU100() {
+		// TODO Colocar o SQL
+		return null;
 	}
 }

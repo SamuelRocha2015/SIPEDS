@@ -85,7 +85,7 @@ public class BlocoJDAOImpl {
 		ResultSet rs = null;
 		
 		try {
-			stmt = con.prepareStatement(SQL.consultaRegistroJ051().toString());
+			stmt = con.prepareStatement(SQL.consultaRegistroJ053().toString());
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {

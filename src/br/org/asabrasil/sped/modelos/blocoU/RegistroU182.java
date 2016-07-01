@@ -3,6 +3,7 @@ package br.org.asabrasil.sped.modelos.blocoU;
 import java.util.List;
 
 import br.org.asabrasil.sped.modelos.Linha;
+import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
 public class RegistroU182 extends Linha {
@@ -43,13 +44,30 @@ public class RegistroU182 extends Linha {
 
 	@Override
 	public void preencheCamposDefault() {
-		// TODO Auto-generated method stub
-
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_U182);
 	}
 
 	@Override
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
-		// TODO Auto-generated method stub
+		StringBuilder reg = new StringBuilder();
+		
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getIdentRegistro());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getCodigo());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getDescricao());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getValor());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(reg);
 
 	}
 

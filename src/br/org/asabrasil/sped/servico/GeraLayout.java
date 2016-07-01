@@ -32,6 +32,10 @@ import br.org.asabrasil.sped.modelos.blocoP.RegistroP001;
 import br.org.asabrasil.sped.modelos.blocoP.RegistroP990;
 import br.org.asabrasil.sped.modelos.blocoQ.RegistroQ001;
 import br.org.asabrasil.sped.modelos.blocoQ.RegistroQ990;
+import br.org.asabrasil.sped.modelos.blocoT.RegistroT001;
+import br.org.asabrasil.sped.modelos.blocoT.RegistroT990;
+import br.org.asabrasil.sped.modelos.blocoU.RegistroU001;
+import br.org.asabrasil.sped.modelos.blocoU.RegistroU030;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 
 public class GeraLayout {
@@ -39,8 +43,6 @@ public class GeraLayout {
 	
 	public void montaLayout(Registro0000 registro0000) {
 
-
-		
 		List<StringBuilder> listaFinal = new ArrayList<>();
 
 		registro0000.gerarRegistro(listaRegistros);
@@ -62,13 +64,13 @@ public class GeraLayout {
 		
 		new RegistroJ001().gerarRegistro(listaRegistros);
 		
-		MontaRegistro.montarRegistroJ050(listaRegistros);
+		MontaRegistro.montaRegistroJ050(listaRegistros);
 		
-		MontaRegistro.montarRegistroJ051(listaRegistros);
+		MontaRegistro.montaRegistroJ051(listaRegistros);
 		
-//		MontaRegistro.montarRegistroJ053(listaRegistros);
-//		
-//		MontaRegistro.montarRegistroJ100(listaRegistros);
+		MontaRegistro.montaRegistroJ053(listaRegistros);
+		
+		MontaRegistro.montaRegistroJ100(listaRegistros);
 
 		listaFinal.addAll(preparaArquivo(new RegistroJ990()));
 		
@@ -101,6 +103,18 @@ public class GeraLayout {
 		new 
 		RegistroQ001().gerarRegistro(listaRegistros);
 		listaFinal.addAll(preparaArquivo(new RegistroQ990()));
+
+		new 
+		RegistroT001().gerarRegistro(listaRegistros);
+		listaFinal.addAll(preparaArquivo(new RegistroT990()));
+		
+//		new 
+//		RegistroU001().gerarRegistro(listaRegistros);
+//		
+//		new 
+//		RegistroU030().gerarRegistro(listaRegistros);
+//		
+//		MontaRegistro.montaRegistroU100(listaRegistros);
 		
 		geraArquivo(listaFinal);
 	}

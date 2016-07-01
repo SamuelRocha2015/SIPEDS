@@ -3,6 +3,7 @@ package br.org.asabrasil.sped.modelos.blocoU;
 import java.util.List;
 
 import br.org.asabrasil.sped.modelos.Linha;
+import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
 public class RegistroU100 extends Linha {
@@ -105,13 +106,51 @@ public class RegistroU100 extends Linha {
 
 	@Override
 	public void preencheCamposDefault() {
-		// TODO Auto-generated method stub
-
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_U100);
 	}
 
 	@Override
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
-		// TODO Auto-generated method stub
+		StringBuilder reg = new StringBuilder();
+		
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getIdentRegistro());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getCodContaReferencial());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getDescricaoContaReferencial());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getIdentTpConta());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getNivelConta());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getNatConta());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getCodContaSintetica());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getSaldoIniContaReferenciada());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getIndicSituacaoSaldoIni());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getSaldoFinContaReferenciada());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+
+		reg.append(this.getIndicSituacaoSaldoFin());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(reg);
 
 	}
 

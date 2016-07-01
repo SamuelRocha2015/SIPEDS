@@ -43,7 +43,8 @@ public class RegistroJ100 extends Linha {
 
 	@Override
 	public void preencheCamposDefault() {
-		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_J053);
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_J100);
+		this.dtAlteracao = Util.dataInicialOuFinalApuracaoSemMascara(true);
 	}
 
 	@Override

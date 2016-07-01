@@ -44,7 +44,7 @@ public class RegistroK030 extends Linha {
 	@Override
 	public void preencheCamposDefault() {
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_K030);
-		this.periodoApuracao = ConstantesSistema.PER_APUR;
+		this.periodoApuracao = ConstantesSistema.PER_APUR_K;
 		this.dtIniPeriodo = Util.dataInicialOuFinalApuracaoSemMascara(true);
 		this.dtFimPeriodo = Util.dataInicialOuFinalApuracaoSemMascara(false);
 	}

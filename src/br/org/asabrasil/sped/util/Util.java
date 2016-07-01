@@ -52,10 +52,8 @@ public final class Util {
 	
 	
 	public static String moedaFormatada(BigDecimal valor) {
-
 		DecimalFormat formatoDois = 
 				new DecimalFormat("##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
-//		new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
 		
 		formatoDois.setMinimumFractionDigits(2); 
 		formatoDois.setParseBigDecimal (true);

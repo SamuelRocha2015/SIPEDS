@@ -133,8 +133,8 @@ public class ConstantesSistema {
 	public static final String REG_REGISTRO_J051 = "J051";
 	public static final String REG_REGISTRO_J053 = "J053";
 	public static final String NAT_SUB_CNT = "76"; 
+	public static final String REG_REGISTRO_J100 = "J100"; 
 	
-		
 	// BLOCO K
 	public static final String REG_REGISTRO_K001 = "K001";
 	public static final String IND_DAD_BLOCO_K = "0";
@@ -144,7 +144,7 @@ public class ConstantesSistema {
 	public static final String REG_REGISTRO_K355 = "K355";
 	public static final String REG_REGISTRO_K356 = "K356";
 	public static final String REG_REGISTRO_K990 = "K990";
-	public static final String PER_APUR = "A00";
+	public static final String PER_APUR_K = "A00";
 	
 	
 	//BLOCO L
@@ -180,8 +180,14 @@ public class ConstantesSistema {
 	//BLOCO U
 	public static final String REG_REGISTRO_U001 = "U001";
 	public static final String IND_DAD_BLOCO_U = "0";
+	public static final String REG_REGISTRO_U030 = "U030"; 
+	public static final String PER_APUR_U = "";
+	public static final String REG_REGISTRO_U100 = "U100";
+	public static final String REG_REGISTRO_U150 = "U150";
+	public static final String REG_REGISTRO_U180 = "U180";
+	public static final String REG_REGISTRO_U182 = "U182";
 	public static final String REG_REGISTRO_U990 = "U990";
-
+	
 	//BLOCO X
 	public static final String REG_REGISTRO_X001 = "X001";
 	public static final String IND_DAD_BLOCO_X = "0";
