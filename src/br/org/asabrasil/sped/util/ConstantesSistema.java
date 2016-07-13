@@ -187,6 +187,10 @@ public class ConstantesSistema {
 	public static final String REG_REGISTRO_U180 = "U180";
 	public static final String REG_REGISTRO_U182 = "U182";
 	public static final String REG_REGISTRO_U990 = "U990";
+	public static final String CODIGO_U180 = "1";
+	public static final String CODIGO_U182 = "5";
+	
+	
 	
 	//BLOCO X
 	public static final String REG_REGISTRO_X001 = "X001";

@@ -44,6 +44,7 @@ public class RegistroU180 extends Linha {
 	@Override
 	public void preencheCamposDefault() {
 		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_U180);
+		this.codigo = ConstantesSistema.CODIGO_U180;
 	}
 
 	@Override

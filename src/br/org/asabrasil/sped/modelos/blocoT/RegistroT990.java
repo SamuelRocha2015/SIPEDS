@@ -15,7 +15,7 @@ public class RegistroT990 extends RegistroFechaBloco {
 	@Override
 	public void preencheCamposDefault() {		
 		// preenche a identificacao do registro
-		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_T001);
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_T990);
 	}
 
 }

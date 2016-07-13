@@ -29,7 +29,6 @@ public abstract class LinhaAbreBloco extends Linha {
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
 		
 		
-		
 		StringBuilder reg = new StringBuilder();
 		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 		

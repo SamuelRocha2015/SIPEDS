@@ -4,15 +4,15 @@ import java.util.List;
 
 import br.org.asabrasil.sped.DAOImpl.BlocoJDAOImpl;
 import br.org.asabrasil.sped.DAOImpl.BlocoKDAOImpl;
-import br.org.asabrasil.sped.DAOImpl.BlocoUDAOImpl;
 import br.org.asabrasil.sped.modelos.bloco0.Registro0930;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ050;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ051;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ053;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ100;
 import br.org.asabrasil.sped.modelos.blocoK.RegistroK155;
-import br.org.asabrasil.sped.modelos.blocoU.RegistroU100;
 import br.org.asabrasil.sped.util.ConstantesSistema;
+import br.org.asabrasil.sped.util.FonteDadosU100;
+import br.org.asabrasil.sped.util.FonteDadosU150;
 
 public final class MontaRegistro {
 
@@ -86,12 +86,22 @@ public final class MontaRegistro {
 		
 	}
 
+	//TODO: Por enquanto o metodo irá ler os dados estaticos. No futuro deverá ser feito um ajuste para a classe pegar esses valores do banco 
 	public static void montaRegistroU100(List<StringBuilder> listaRegistros) {
-		List<RegistroU100> lista = BlocoUDAOImpl.getInstance().consultaU100();
+		List<String> lista = FonteDadosU100.getU100();
+		
+		for (String str : lista) {
+			listaRegistros.add(new StringBuilder(str));	
+		}
+	}
 
-		for (RegistroU100 reg : lista) {
-			reg.gerarRegistro(listaRegistros);
-		}		
+	//TODO: Por enquanto o metodo irá ler os dados estaticos. No futuro deverá ser feito um ajuste para a classe pegar esses valores do banco 
+	public static void montaRegistroU150(List<StringBuilder> listaRegistros) {
+		List<String> lista = FonteDadosU150.getU150();
+		
+		for (String str : lista) {
+			listaRegistros.add(new StringBuilder(str));	
+		}
 	}
 
 }

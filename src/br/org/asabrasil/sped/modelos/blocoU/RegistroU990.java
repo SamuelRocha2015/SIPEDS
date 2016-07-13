@@ -7,7 +7,7 @@ public class RegistroU990 extends RegistroFechaBloco {
 
 	public RegistroU990() {
 		super();
-		preencheCamposDefault();
+		preencheCamposDefault();	
 	}
 
 	@Override
