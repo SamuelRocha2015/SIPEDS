@@ -95,8 +95,8 @@ public class ConstantesSistema {
 
 	// BLOCO 0 - Registro 0930
 	public static final String REG_REGISTRO_0930 = "0930";
-	//dados do contador
 	
+	//dados do contador
 	public static final String IDENT_NOME_CONTADOR = "ROSIVALDO JUSTINO DA SILVA";
 	public static final String IDENT_CPF_CNPJ_CONTADOR = "19431120453";
 	public static final String IDENT_QUALIF_CONTADOR = "900";
@@ -181,7 +181,7 @@ public class ConstantesSistema {
 	public static final String REG_REGISTRO_U001 = "U001";
 	public static final String IND_DAD_BLOCO_U = "0";
 	public static final String REG_REGISTRO_U030 = "U030"; 
-	public static final String PER_APUR_U = "";
+	public static final String PER_APUR_U = "A00";
 	public static final String REG_REGISTRO_U100 = "U100";
 	public static final String REG_REGISTRO_U150 = "U150";
 	public static final String REG_REGISTRO_U180 = "U180";
@@ -195,13 +195,60 @@ public class ConstantesSistema {
 	//BLOCO X
 	public static final String REG_REGISTRO_X001 = "X001";
 	public static final String IND_DAD_BLOCO_X = "0";
-	public static final String REG_REGISTRO_X990 = "X990";
+	public static final String  REG_REGISTRO_X280 = "X280";
+	public static final String IND_ATIV = "00";
+	public static final String IND_PROJ = "00";
+	public static final String REG_REGISTRO_X353 = "X353";
+	public static final String REG_REGISTRO_X352 = "X352";
+	public static final String REG_REGISTRO_X351 = "X351";
+	public static final String REG_REGISTRO_X350 = "X350";
+	public static final String REG_REGISTRO_X340 = "X340";
+	public static final String REG_REGISTRO_X330 = "X330";
+	public static final String REG_REGISTRO_X320 = "X320";
+	public static final String REG_REGISTRO_X310 = "X310";
+	public static final String REG_REGISTRO_X300 = "X300";
+	public static final String REG_REGISTRO_X390 = "X390";
+	public static final String REG_REGISTRO_X292 = "X292";
+	public static final String REG_REGISTRO_X291 = "X291";
+	public static final String REG_REGISTRO_X354 = "X354";
+	public static final String REG_REGISTRO_X510 = "X510";
+	public static final String REG_REGISTRO_X500 = "X500";
+	public static final String REG_REGISTRO_X490 = "X490";
+	public static final String REG_REGISTRO_X480 = "X480";
+	public static final String REG_REGISTRO_X470 = "X470";
+	public static final String REG_REGISTRO_X460 = "X460";
+	public static final String REG_REGISTRO_X450 = "X450";
+	public static final String REG_REGISTRO_X430 = "X430";
+	public static final String REG_REGISTRO_X420 = "X420";
+	public static final String REG_REGISTRO_X410 = "X410";
+	public static final String REG_REGISTRO_X400 = "X400";
+	public static final String REG_REGISTRO_X356 = "X356";
+	public static final String REG_REGISTRO_X355 = "X355";
+	public static final String CODIGO_REG_X390 = "6";
 	
+	public static final String REG_REGISTRO_X990 = "X990";
 
 	//BLOCO Y
 	public static final String REG_REGISTRO_Y001 = "Y001";
 	public static final String IND_DAD_BLOCO_Y = "0";
+	public static final String REG_REGISTRO_Y540 = "Y540";
+	public static final String REG_REGISTRO_Y570 = "Y570";
+	public static final String REG_REGISTRO_Y600 = "Y600";
+	public static final String REG_REGISTRO_Y612 = "Y612";
+	public static final String REG_REGISTRO_Y620 = "Y620";
+	public static final String REG_REGISTRO_Y671 = "Y671";
+	public static final String REG_REGISTRO_Y672 = "Y672";
+	public static final String REG_REGISTRO_Y720 = "Y720";
+	public static final String REG_REGISTRO_Y800 = "Y800";
+	
 	public static final String REG_REGISTRO_Y990 = "Y990";
 	
 	
+	//BLOCO 9
+	public static final String REG_REGISTRO_9001 = "9001";
+	public static final String IND_DAD_BLOCO_9 = "0";
+	
+	public static final String REG_REGISTRO_9100 = "9100";
+	public static final String REG_REGISTRO_9900 = "9900";
+	public static final String REG_REGISTRO_9990 = "9990";
 }

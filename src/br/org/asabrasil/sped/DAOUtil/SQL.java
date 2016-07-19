@@ -81,7 +81,8 @@ public final class SQL {
 	
 		
 		sql.append("   SELECT                                                                                                                                           ");  
-		sql.append("     CLASSIFICADOR AS COD_CONTA_ANALITICA,                                                                                                          ");  
+//		sql.append("     CLASSIFICADOR AS COD_CONTA_ANALITICA,                                                                                                          ");  
+		sql.append("     REPLACE(SUBSTR(CLASSIFICADOR,1,3),'.','.0') || SUBSTR(CLASSIFICADOR,4,LENGTH(CLASSIFICADOR)) COD_CONTA_ANALITICA, 								");
 		sql.append("     NVL(saldoanterior,0) AS SALDO_ANTERIOR, CASE WHEN NVL(saldoanterior,0) >= 0 THEN 'D' ELSE 'C' END INDICADOR_INICIAL,                           ");  
 		sql.append("     NVL(ValorDebito, 0) AS VALOR_DEBITO ,                                                                                                          ");  
 		sql.append("     NVL(ValorCredito,0) AS VALOR_CREDITO,                                                                                                          ");  

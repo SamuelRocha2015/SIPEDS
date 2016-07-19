@@ -3,6 +3,7 @@ package br.org.asabrasil.sped.modelos.blocoX;
 import java.util.List;
 
 import br.org.asabrasil.sped.modelos.Linha;
+import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
 public class RegistroX450 extends Linha {
@@ -96,6 +97,7 @@ public class RegistroX450 extends Linha {
 
 	@Override
 	public void preencheCamposDefault() {
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_X450);
 	}
 
 	@Override

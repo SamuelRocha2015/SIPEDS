@@ -21,18 +21,15 @@ public final class MontaRegistro {
 		Registro0930 registro0930Contador = new Registro0930();
 		Registro0930 registro0930Presidente = new Registro0930();
 
-		// TODO: Mock apenas para teste, mudar para os valores reais, quando
-		// souber a informação
+		//DADOS DO CONTADOR
 		registro0930Contador.setNomeSignatario(ConstantesSistema.IDENT_NOME_CONTADOR);
 		registro0930Contador.setCpfCnpj(ConstantesSistema.IDENT_CPF_CNPJ_CONTADOR);
 		registro0930Contador.setCodQualifAssinante(ConstantesSistema.IDENT_QUALIF_CONTADOR);
-		// TODO: Conseguir o nome da inscricao contabilista do contador
-		// registro0930Contador.setNumeroInscricaoContabilista("1SP123456");
+		registro0930Contador.setNumeroInscricaoContabilista(ConstantesSistema.IND_CRC_CONTADOR);
 		registro0930Contador.setEmailSignatario(ConstantesSistema.IDENT_EMAIL_CONTADOR);
 		registro0930Contador.setFoneSignatario(ConstantesSistema.IDENT_FONE_CONTADOR);
 
-		// TODO: Mock apenas para teste, mudar para os valores reais, quando
-		// souber a informação
+		//DADOS DO RESPONSAVEL
 		registro0930Presidente.setNomeSignatario(ConstantesSistema.IDENT_NOME_RESPONSAVEL2);
 		registro0930Presidente.setCpfCnpj(ConstantesSistema.IDENT_CPF_CNPJ_RESPONSAVEL2);
 		registro0930Presidente.setCodQualifAssinante(ConstantesSistema.IDENT_QUALIF_RESPONSAVEL2);

@@ -8,7 +8,6 @@ import br.org.asabrasil.sped.util.Util;
 
 public class RegistroU182 extends Linha {
 
-
 	private String codigo;
 	private String descricao;
 	private String valor;

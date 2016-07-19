@@ -3,6 +3,7 @@ package br.org.asabrasil.sped.modelos.blocoX;
 import java.util.List;
 
 import br.org.asabrasil.sped.modelos.Linha;
+import br.org.asabrasil.sped.util.ConstantesSistema;
 import br.org.asabrasil.sped.util.Util;
 
 public class RegistroX280 extends Linha {
@@ -60,13 +61,38 @@ public class RegistroX280 extends Linha {
 
 	@Override
 	public void preencheCamposDefault() {
-		// TODO Auto-generated method stub
+		this.setIdentRegistro(ConstantesSistema.REG_REGISTRO_X280);
+		this.beneficioFiscal = ConstantesSistema.IND_ATIV;
+		this.projeto = ConstantesSistema.IND_PROJ;
 	}
 
 	@Override
 	public void gerarRegistro(List<StringBuilder> listaRegistros) {
-		// TODO Auto-generated method stub
+	StringBuilder reg = new StringBuilder();
+		
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getIdentRegistro());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
 
+		reg.append(this.getBeneficioFiscal());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getProjeto());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getAtoConcessiorio());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getPrazoVigenciaIni());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.getPrazoVigenciaFin());
+		reg.append(ConstantesSistema.CARACTERE_SEPARADOR);
+		
+		reg.append(this.geraFinalRegistro());
+		
+		listaRegistros.add(reg);
 	}
 
 }

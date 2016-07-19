@@ -40,7 +40,9 @@ import br.org.asabrasil.sped.modelos.blocoU.RegistroU180;
 import br.org.asabrasil.sped.modelos.blocoU.RegistroU182;
 import br.org.asabrasil.sped.modelos.blocoU.RegistroU990;
 import br.org.asabrasil.sped.modelos.blocoX.RegistroX001;
+import br.org.asabrasil.sped.modelos.blocoX.RegistroX390;
 import br.org.asabrasil.sped.modelos.blocoX.RegistroX990;
+import br.org.asabrasil.sped.modelos.blocoY.RegistroY001;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 
 public class GeraLayout {
@@ -123,18 +125,29 @@ public class GeraLayout {
 		
 		MontaRegistro.montaRegistroU150(listaRegistros);
 		
+		/*não vai ter mais os registros U180 e U182 
 		new 
 		RegistroU180().gerarRegistro(listaRegistros);
-		
-		
 		new 
 		RegistroU182().gerarRegistro(listaRegistros);
+		*/
+		
 		listaFinal.addAll(preparaArquivo(new RegistroU990()));
 		
 		new 
 		RegistroX001().gerarRegistro(listaRegistros);
+		
+//		new 
+//		RegistroX280().gerarRegistro(listaRegistros);
+		
+		new 
+		RegistroX390().gerarRegistro(listaRegistros);
+		
 		listaFinal.addAll(preparaArquivo(new RegistroX990()));
-				
+		
+		new 
+		RegistroY001().gerarRegistro(listaRegistros);
+		
 		geraArquivo(listaFinal);
 	}
 
