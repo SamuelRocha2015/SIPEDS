@@ -6,11 +6,11 @@ import br.org.asabrasil.sped.DAOImpl.BlocoJDAOImpl;
 import br.org.asabrasil.sped.DAOImpl.BlocoKDAOImpl;
 import br.org.asabrasil.sped.modelos.bloco0.Registro0930;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ050;
-import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ051;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ053;
 import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ100;
 import br.org.asabrasil.sped.modelos.blocoK.RegistroK155;
 import br.org.asabrasil.sped.util.ConstantesSistema;
+import br.org.asabrasil.sped.util.FonteDadosJ051;
 import br.org.asabrasil.sped.util.FonteDadosU100;
 import br.org.asabrasil.sped.util.FonteDadosU150;
 
@@ -50,10 +50,10 @@ public final class MontaRegistro {
 	}
 
 	public static void montaRegistroJ051(List<StringBuilder> listaRegistros) {
-		List<RegistroJ051> lista = BlocoJDAOImpl.getInstance().consultaJ051();
-
-		for (RegistroJ051 reg : lista) {
-			reg.gerarRegistro(listaRegistros);
+		List<String> lista = FonteDadosJ051.getJ051();
+		
+		for (String str : lista) {
+			listaRegistros.add(new StringBuilder(str));	
 		}
 
 	}

@@ -3,6 +3,11 @@ package br.org.asabrasil.sped.util;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TODO: Esses valores veem do desktop. No futuro modificar para a propria aplicação consultar e montar esse registro.
+ * @author samuel.rocha
+ *
+ */
 public final class FonteDadosU100 {
 
 	public FonteDadosU100() {
