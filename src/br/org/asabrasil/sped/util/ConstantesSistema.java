@@ -243,6 +243,13 @@ public class ConstantesSistema {
 	
 	public static final String REG_REGISTRO_Y990 = "Y990";
 	
+	public static final String REG_REGISTRO_Y520 = "Y520";
+	public static final String Y520_Tipo = "R";
+	public static final String COD_PAIS = "249";
+	public static final String Y520_FORMA  = "1";
+	public static final String Y520_NAT_OPERACAO = "37080";
+	public static final String Y520_VL_PERIODO  = "33299,52";
+
 	
 	//BLOCO 9
 	public static final String REG_REGISTRO_9001 = "9001";

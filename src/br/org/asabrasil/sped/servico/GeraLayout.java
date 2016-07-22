@@ -36,13 +36,12 @@ import br.org.asabrasil.sped.modelos.blocoT.RegistroT001;
 import br.org.asabrasil.sped.modelos.blocoT.RegistroT990;
 import br.org.asabrasil.sped.modelos.blocoU.RegistroU001;
 import br.org.asabrasil.sped.modelos.blocoU.RegistroU030;
-import br.org.asabrasil.sped.modelos.blocoU.RegistroU180;
-import br.org.asabrasil.sped.modelos.blocoU.RegistroU182;
 import br.org.asabrasil.sped.modelos.blocoU.RegistroU990;
 import br.org.asabrasil.sped.modelos.blocoX.RegistroX001;
-import br.org.asabrasil.sped.modelos.blocoX.RegistroX390;
 import br.org.asabrasil.sped.modelos.blocoX.RegistroX990;
 import br.org.asabrasil.sped.modelos.blocoY.RegistroY001;
+import br.org.asabrasil.sped.modelos.blocoY.RegistroY520;
+import br.org.asabrasil.sped.modelos.blocoY.RegistroY990;
 import br.org.asabrasil.sped.util.ConstantesSistema;
 
 public class GeraLayout {
@@ -140,13 +139,21 @@ public class GeraLayout {
 //		new 
 //		RegistroX280().gerarRegistro(listaRegistros);
 		
-		new 
-		RegistroX390().gerarRegistro(listaRegistros);
+//		new 
+//		RegistroX390().gerarRegistro(listaRegistros);
+		
+		
+		MontaRegistro.montaRegistroX390(listaRegistros);
 		
 		listaFinal.addAll(preparaArquivo(new RegistroX990()));
 		
 		new 
 		RegistroY001().gerarRegistro(listaRegistros);
+
+		new 
+		RegistroY520().gerarRegistro(listaRegistros);
+		
+		listaFinal.addAll(preparaArquivo(new RegistroY990()));
 		
 		geraArquivo(listaFinal);
 	}
