@@ -125,4 +125,24 @@ public class BlocoJDAOImpl {
 		}
 		return listaJ100;
 	}
+	
+	
+	public List<String> consultaJ050EJ051() {
+		List<String> lista = new ArrayList<>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		try {
+			stmt = con.prepareStatement(SQL.consultaRegistroJ050ParaJ051().toString());
+			rs = stmt.executeQuery();
+			
+			 while (rs.next()) {
+				 lista.add(rs.getString("DESCRICAO")+"\r\n");
+			 }
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return lista;		
+	}
 }

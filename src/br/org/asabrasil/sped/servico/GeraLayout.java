@@ -70,11 +70,13 @@ public class GeraLayout {
 		
 		new RegistroJ001().gerarRegistro(listaRegistros);
 		
-		MontaRegistro.montaRegistroJ050(listaRegistros);
+//		MontaRegistro.montaRegistroJ050(listaRegistros);
+//		
+//		MontaRegistro.montaRegistroJ051(listaRegistros);
 		
-		MontaRegistro.montaRegistroJ051(listaRegistros);
+		MontaRegistro.montaRegistroJ050ParaJ051(listaRegistros);
 		
-		MontaRegistro.montaRegistroJ053(listaRegistros);
+//		MontaRegistro.montaRegistroJ053(listaRegistros);
 		
 		MontaRegistro.montaRegistroJ100(listaRegistros);
 

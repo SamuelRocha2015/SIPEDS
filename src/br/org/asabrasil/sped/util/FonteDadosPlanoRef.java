@@ -1,61 +1,18 @@
+package br.org.asabrasil.sped.util;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import br.org.asabrasil.sped.DAOImpl.BlocoJDAOImpl;
-import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ050;
-import br.org.asabrasil.sped.util.FonteDadosJ051;
-import br.org.asabrasil.sped.util.Util;
+public class FonteDadosPlanoRef {
 
-public class TestaMapeamentos {
-
-	public static void main(String[] args) {
-		Map<String, String> mapeamento = mapeamento();
-		List<String> listaJ051 = geraListaJ051();
-		List<RegistroJ050> listaRegJ050 = geraListaJ050();
-		
-		fazMapeamento(mapeamento, listaJ051, listaRegJ050);
-
-		System.out.println("fim");
-		
+	public FonteDadosPlanoRef() {
+		super();
 	}
 	
-
-	public static void fazMapeamento(Map<String, String> map, List<String> listaJ051, List<RegistroJ050> listaRegJ050){
-		
-		for (RegistroJ050 registroJ050 : listaRegJ050) {
-			
-			if ("A".equals(registroJ050.getIndicTpConta())){
-				//System.out.println(registroJ050.getCodContaAnaliticaSintetica());
-				String planReferencial = null;
-				planReferencial = map.get(registroJ050.getCodContaAnaliticaSintetica());
-				
-				if (!Util.isStringVazia(planReferencial)){
-					
-					if (listaJ051.contains(planReferencial)){
-						System.out.println("ACHOU KARAI");
-						break;
-					}
-					
-//					System.out.println(planReferencial);
-				}	
-			}
-		}
-	}
- 
-
-	public static List<RegistroJ050> geraListaJ050(){
-		return BlocoJDAOImpl.getInstance().consultaJ050();
-	}
-	
-	public static List<String> geraListaJ051(){
-		return FonteDadosJ051.getJ051();
-	}
-	
-	public static Map<String, String> mapeamento(){
+	public static Map<String, String> getMapeamento(){
 		Map<String, String> map = new HashMap();
 		
-	
+		
 		map.put("1.01.01.01.01.01.01.01","1.01.01.01.01");
 		map.put("1.01.01.01.01.01.02.01","1.01.01.01.01");
 		map.put("1.01.01.02.01.01.01.11","1.01.01.02.03");
@@ -1577,6 +1534,9 @@ public class TestaMapeamentos {
 
 		
 		return map;
+
 	}
+
+	
 	
 }

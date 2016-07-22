@@ -42,7 +42,7 @@ public final class MontaRegistro {
 
 	}
 
-	public static void montaRegistroJ050(List<StringBuilder> listaRegistros) {
+	/*public static void montaRegistroJ050(List<StringBuilder> listaRegistros) {
 		List<RegistroJ050> listaRegJ050 = BlocoJDAOImpl.getInstance().consultaJ050();
 
 		for (RegistroJ050 registroJ050 : listaRegJ050) {
@@ -57,7 +57,7 @@ public final class MontaRegistro {
 			listaRegistros.add(new StringBuilder(str));
 		}
 
-	}
+	}*/
 
 	public static void montaRegistroK155(List<StringBuilder> listaRegistros) {
 		List<RegistroK155> listaRegK155 = BlocoKDAOImpl.getInstance().consultaK155();
@@ -114,4 +114,14 @@ public final class MontaRegistro {
 		listaRegX390 = null;
 	}
 
+	
+	public static void montaRegistroJ050ParaJ051(List<StringBuilder> listaRegistros) {
+		List<String> listaRegU100 = BlocoJDAOImpl.getInstance().consultaJ050EJ051();
+
+		for (String str : listaRegU100) {
+			listaRegistros.add(new StringBuilder(str));
+		}
+		listaRegU100 = null;
+	}	
+	
 }

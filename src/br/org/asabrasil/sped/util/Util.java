@@ -5,7 +5,11 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import br.org.asabrasil.sped.modelos.blocoJ.RegistroJ050;
 
 public final class Util {
 
@@ -60,5 +64,22 @@ public final class Util {
 		
 		return formatoDois.format(valor);
 		
+	}
+	
+	
+	public static void mapeaPlanRefRegJ050ParaRegJ051(Map<String, String> map, List<String> listaJ051, List<RegistroJ050> listaRegJ050, List<StringBuilder> listaRegistros){
+		
+		for (RegistroJ050 registroJ050 : listaRegJ050) {
+			
+			if ("A".equals(registroJ050.getIndicTpConta())){
+				//System.out.println(registroJ050.getCodContaAnaliticaSintetica());
+				String planReferencial = null;
+				planReferencial = map.get(registroJ050.getCodContaAnaliticaSintetica());
+				
+				if (!Util.isStringVazia(planReferencial)){
+					System.out.println(planReferencial);
+				}
+			}
+		}
 	}
 }

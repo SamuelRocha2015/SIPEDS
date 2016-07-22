@@ -18,7 +18,6 @@ public class FonteDadosJ051 {
 	public static List<String> getJ051(){
 		List<String> lista = new ArrayList<>();
 		
-		
 		lista.add("|J051||1.01.01.01.01|\r\n");	
 		lista.add("|J051||1.01.01.01.01|\r\n");	
 		lista.add("|J051||1.01.01.02.03|\r\n");	
